@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "Ornamental";
+    src: url("/fonts/ExtraOrnamentalNo2.ttf") format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "LibreBaskerville";
+    src: url("/fonts/LibreBaskerville-Regular.ttf") format("truetype");
+    font-weight: 1 999;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("/fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "EB Garamond Italic";
+    src: url("/fonts/EBGaramond-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "Anton";
+    src: url("/fonts/Anton-Regular.ttf") format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "Cormorant";
+    src: url("/fonts/cormorant.ttf") format("truetype");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "Pluton";
+    src: url("/fonts/pluton.woff") format("woff");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "PlutonItalic";
+    src: url("/fonts/plutonItalic.woff2") format("woff2");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "Bostonia";
+    src: url("/fonts/Bostonia.woff2") format("woff2");
+    font-weight: 1 999;
+}
+@font-face {
+    font-family: "NotoSans";
+    src: url("/fonts/NotoSans-Regular.ttf") format("truetype");
+    font-weight: 1 999;
+}
+
+.color-test {
+    color: #dcd930;
+    color: rgb(39, 45, 45);
+}
