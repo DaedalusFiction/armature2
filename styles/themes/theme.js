@@ -4,127 +4,126 @@ let theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: "#c35747", //reddish
-            // off: "#f58d4d",
-            off: "#8f4033",
+            // main: "#DD4B1D", //Big Orange
+            // main: "#ef369d", //magenta 2
+            // main: "#ef3688", //magenta 1
+            main: "#f9822e", //creamsicle
+            main: "#36ef61", //spring green
+            main: "#CE37F0", //phlox (yes that's real)
+            main: "#49BB71", //jade
+            main: "#FF472B", //reddish
+            main: "#673147", //plum
+            overlay: "rgba(103, 49, 71, 0.5)", //plum?
+            main: "#8A1F4A", //murrey
+            main: "#FF472B", //coquelicot (orange)
+            overlay: "rgba(255, 71, 43, 0)", //coquelicot
+
+            // overlay: "rgba(206, 55, 240, 0.5)",
+            // overlay: "rgba(138, 31, 74, 0.5)",
         },
         secondary: {
-            // main: "#dcd930", //yellowish
-            main: "#e4b363", //yellowish
-            main: "#FED766", //yellowish
-            main: "#CAFE48", //yellowish
+            main: "#0098d8", //burnt orange
         },
         background: {
-            default: "#272D2D", //dark
+            // default: "#fef9f7", //lightbeige
+            // default: "#f7f4e1", //lightbeige
+            default: "#F6F7EB", //ivory
             accent: "#ffeccd",
-            dark: "#ffeccd",
+            dark: "#484041",
         },
         custom: {
-            dark: "#272D2D",
+            dark: "#1c1c1c",
             darkMuted: "#757575",
-            light: "#F6F8FF",
-            lightMuted: "#cacaca",
+            light: "#fffceb",
+            lightMuted: "#e6e6e6",
+            accent: "#d61919",
         },
         text: {
-            // primary: "#272D2D", //dark
-            primary: "#F6F8FF", //dark
+            primary: "#272D2D",
             primaryMuted: "#757575",
             secondary: "#F6F8FF",
             secondaryMuted: "#cacaca",
         },
     },
-    fonts: {
-        primary: "LibreBaskerville",
-        secondary: "Bostonia",
-        body: "LibreBaskerville",
+    font: {
+        // body: "Kumbh",
+        body: "IBMPlex",
+        title: "AvantGarde",
+        // title: "Bebas",
     },
 });
 
 theme = createTheme(theme, {
-    border: `1px solid ${theme.palette.custom.dark}`,
+    border: `1px solid ${theme.palette.custom.accent}`,
     custom: {
         spacing: {
-            paragraph: "2rem",
-            quote: "3rem",
+            small: "1rem",
+            medium: "3rem",
+            large: "4rem",
+            xl: "8rem",
         },
     },
     typography: {
         h1: {
-            // fontFamily: "Raleway",
-            // fontFamily: theme.fonts.secondary,
-            fontFamily: theme.fonts.secondary,
-            color: theme.palette.custom.primary,
+            fontFamily: theme.font.title,
+            color: theme.palette.custom.dark,
+            color: theme.palette.background.default,
             // color: theme.palette.primary.off,
-            fontWeight: "400",
-            // lineHeight: ".85em",
-            fontSize: "3.5rem",
-            letterSpacing: ".025em",
+
+            fontSize: "clamp(3.5rem, 7.5vw, 9rem)",
         },
         h2: {
-            color: theme.palette.custom.primary,
-            fontFamily: theme.fonts.primary,
-            fontWeight: "300",
-            // color: darkTheme.palette.custom.dark,
-            fontSize: "clamp(2.5rem, 2vw, 10rem)",
-            letterSpacing: ".025em",
+            color: theme.palette.custom.dark,
+            fontSize: "clamp(3.5rem, 6vw, 9rem)",
+            fontFamily: theme.font.title,
         },
         h3: {
-            color: theme.palette.custom.primary,
-            fontFamily: theme.fonts.secondary,
-            letterSpacing: ".025em",
-            fontSize: "1.75rem",
+            color: theme.palette.custom.dark,
+            fontFamily: theme.font.title,
+            fontSize: "2.5rem",
         },
         h4: {
-            color: theme.palette.custom.light,
-            fontFamily: theme.fonts.primary,
-            fontSize: "1rem",
-            fontWeight: "400",
-            lineHeight: "1.75rem",
-            // color: darkTheme.palette.custom.dark,
+            color: theme.palette.custom.dark,
+            fontFamily: theme.font.title,
+            fontSize: "clamp(2rem, 2.3vw, 7rem)",
+            // fontWeight: "600",
         },
         h5: {
-            // color: theme.palette.custom.primary,
-            fontFamily: theme.fonts.primary,
-            fontSize: "1rem",
-            fontWeight: "600",
-            // color: darkTheme.palette.custom.dark,
+            fontFamily: theme.font.title,
+            fontSize: "1.75rem",
         },
         h6: {
-            fontWeight: "500",
-            fontSize: "1rem",
-            fontFamily: "EB Garamond Italic",
-            // fontFamily: theme.fonts.secondary,
+            fontFamily: theme.font.title,
+            fontSize: "1.5rem",
+            // fontSize: "2.25rem", //Satisfy
         },
 
         subtitle1: {
-            fontFamily: "Raleway",
-            fontWeight: "400",
-            color: theme.palette.custom.primaryMuted,
+            fontFamily: theme.font.body,
+            color: theme.palette.custom.dark,
             fontSize: "1.25rem",
         },
         subtitle2: {
-            fontFamily: "Raleway",
-            fontWeight: "400",
+            fontFamily: theme.font.body,
             fontSize: "1.25rem",
-            color: theme.palette.custom.primaryMuted,
+            color: theme.palette.custom.dark,
         },
         body1: {
-            fontFamily: theme.fonts.body,
-            fontWeight: "400",
-            fontSize: "1rem",
-            // lineHeight: "1.25rem",
-            color: theme.palette.custom.light,
-            // fontFamily: darkTheme.typography.darkTheme.main,
+            fontFamily: theme.font.body,
+            color: theme.palette.custom.dark,
+            fontSize: "1.35rem",
+            lineHeight: "1.25em",
         },
         body2: {
-            fontSize: "1.15rem",
-            fontFamily: theme.fonts.body,
-            // lineHeight: "1.5rem",
-            color: theme.palette.custom.lightMuted,
-            // fontFamily: darkTheme.typography.darkTheme.decorative,
+            fontFamily: theme.font.body,
+
+            color: theme.palette.primary.main,
+            fontSize: "1.25rem",
+            lineHeight: "1.25em",
         },
         caption: {
             color: theme.palette.custom.darkMuted,
+            fontSize: ".75rem",
         },
     },
     components: {
@@ -140,7 +139,8 @@ theme = createTheme(theme, {
         MuiChip: {
             styleOverrides: {
                 root: {
-                    backgroundColor: theme.palette.custom.dark,
+                    backgroundColor: theme.palette.secondary.main,
+                    color: theme.palette.background.default,
                 },
             },
         },
@@ -157,16 +157,6 @@ theme = createTheme(theme, {
                 root: {
                     // fontFamily: theme.typography.theme.accent,
                     color: theme.palette.secondary.main,
-                },
-            },
-        },
-        MuiListItem: {
-            styleOverrides: {
-                root: {
-                    // fontFamily: theme.typography.theme.accent,
-                    listStyleType: "disc",
-                    display: "list-item",
-                    marginLeft: "2rem",
                 },
             },
         },

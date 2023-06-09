@@ -10,8 +10,82 @@ export default class MyDocument extends Document {
                 <Head>
                     <meta
                         name="keywords"
-                        content="art, portfolio, photography, music"
+                        content="catering, food, weddings, events, greek life, sororities, fraternities"
                     />
+                    <meta
+                        data-n-head="ssr"
+                        data-hid="description"
+                        name="description"
+                        content="Event and Wedding Catering in Charlottesville, Virginia"
+                    />
+                    <meta
+                        data-n-head="ssr"
+                        name="twitter:card"
+                        content="Event and Wedding Catering in Charlottesville, Virginia"
+                    />
+                    <meta
+                        data-n-head="ssr"
+                        name="twitter:title"
+                        content="Flavor Exceptional Catering"
+                    />
+                    <meta
+                        data-n-head="ssr"
+                        name="twitter:description"
+                        content="Event and Wedding Catering in Charlottesville, Virginia"
+                    />
+                    <meta
+                        data-n-head="ssr"
+                        name="twitter:creator"
+                        content="Flavor Exceptional Catering"
+                    />
+
+                    {/* <meta data-n-head="ssr" name="og:title" content="Zuzu's Hot Five"> */}
+                    <meta data-n-head="ssr" name="og:type" content="website" />
+                    <meta
+                        data-n-head="ssr"
+                        name="og:url"
+                        content="https://flavorcville.com"
+                    />
+
+                    <meta
+                        data-n-head="ssr"
+                        name="og:description"
+                        content="Event and Wedding Catering in Charlottesville, Virginia"
+                    />
+                    <meta
+                        data-n-head="ssr"
+                        name="og:site_name"
+                        content="Flavor Exceptional Catering"
+                    />
+
+                    <link
+                        rel="apple-touch-icon"
+                        sizes="180x180"
+                        href="images/favicons/apple-touch-icon.png"
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        sizes="32x32"
+                        href="images/favicons/favicon-32x32.png"
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        sizes="16x16"
+                        href="images/favicons/favicon-16x16.png"
+                    />
+                    <link
+                        rel="manifest"
+                        href="images/favicons/site.webmanifest"
+                    />
+                    <link
+                        rel="mask-icon"
+                        href="images/favicons/safari-pinned-tab.svg"
+                        color="#5bbad5"
+                    />
+                    <meta name="msapplication-TileColor" content="#da532c" />
+                    <meta name="theme-color" content="#ffffff"></meta>
                 </Head>
                 <body>
                     <Main />
