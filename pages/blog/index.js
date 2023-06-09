@@ -3,14 +3,14 @@ import React from "react";
 import PublicationIndex from "../../components/layout/PublicationIndex";
 import { db } from "../../firebase";
 
-const category = "Letters";
+const category = "Design";
 
 const index = ({ items }) => {
     return <PublicationIndex category={category} items={items} />;
 };
 
 export const getServerSideProps = async (context) => {
-    const publicationsRef = collection(db, "publications");
+    const publicationsRef = collection(db, "blog");
     const itemsQuery = query(
         publicationsRef,
         where("categories", "array-contains", category),

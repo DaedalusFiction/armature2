@@ -5,13 +5,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAYORxM5zmEsLGJ4d1lNVVoHni_yc1l4KQ",
-    authDomain: "basilinda-e1dac.firebaseapp.com",
-    projectId: "basilinda-e1dac",
-    storageBucket: "basilinda-e1dac.appspot.com",
-    messagingSenderId: "602883891062",
-    appId: "1:602883891062:web:4b9adbddcc09e68a6ea457",
-    measurementId: "G-PNQBW8DFZV",
+    apiKey: "AIzaSyAKlc7h6zHBYBrQBFCRr68H06QwKvqae34",
+    authDomain: "armature-6e64a.firebaseapp.com",
+    projectId: "armature-6e64a",
+    storageBucket: "armature-6e64a.appspot.com",
+    messagingSenderId: "144478779339",
+    appId: "1:144478779339:web:440c4de8b7f81e4bdba84e",
+    measurementId: "G-10WPPK89LE",
 };
 
 // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
