@@ -1,66 +1,84 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { HouseOutlined, MailOutline } from "@mui/icons-material";
+import { Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import Link from "next/link";
 import React from "react";
+import theme from "../../styles/themes/theme";
+import ExpandingText from "../general/ExpandingText";
 import SocialMediaIcons from "../general/SocialMediaIcons";
-
-const socialMedia = [
-    { media: "twitter", url: "https://google.com" },
-    { media: "instagram", url: "https://google.com" },
-    { media: "facebook", url: "https://google.com" },
-];
-
-const contactInfo = [
-    { type: "telephone", value: "555-555-5555" },
-    { type: "email", value: "hello@artistName.com" },
-];
 
 const Footer = () => {
     return (
-        <Container maxWidth="xl">
-            <Grid container spacing={2} sx={{ padding: "1rem 0" }}>
-                <Grid item xs={4} sx={{ display: { xs: "none", md: "flex" } }}>
-                    <SocialMediaIcons color="primary" fontSize="25px" />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            gap: ".25em",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Typography sx={{ textAlign: "center" }}>
-                            Website made by{" "}
-                        </Typography>
-
-                        <Typography
-                            sx={{ "&:hover": { textDecoration: "underline" } }}
-                        >
-                            <a
-                                href="https://www.fictionalweb.com"
-                                target="_blank"
-                                rel="noreferrer"
+        <Box sx={{ background: theme.palette.primary.main, padding: "4rem 0" }}>
+            <Container maxWidth="xl">
+                <Grid container spacing={4}>
+                    <Grid item xs={12} md={6}>
+                        <Box>
+                            {/* <Line reversed color="white" /> */}
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    gap: "1rem",
+                                    alignItems: "center",
+                                }}
                             >
-                                Fictional Web
-                            </a>
-                        </Typography>
-                    </Box>
+                                <HouseOutlined
+                                    sx={{
+                                        color: theme.palette.custom.lightMuted,
+                                    }}
+                                />
+                                <Box>
+                                    <Typography
+                                        sx={{
+                                            color: theme.palette.custom.light,
+                                            marginLeft: ".5rem",
+                                        }}
+                                    >
+                                        Charlottesville, Virginia, United States
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    gap: "1rem",
+                                    marginTop: ".5rem",
+                                }}
+                            >
+                                {/* <Line reversed color="white" /> */}
+                                <MailOutline
+                                    sx={{
+                                        color: theme.palette.custom.lightMuted,
+                                    }}
+                                />
+                                <ExpandingText>
+                                    <a
+                                        style={{
+                                            color: theme.palette.custom.light,
+                                        }}
+                                        href="mailto:hello@armature.studio"
+                                    >
+                                        hello@armature.studio
+                                    </a>
+                                </ExpandingText>
+                            </Box>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: { xs: "start", md: "end" },
+                            }}
+                        >
+                            <SocialMediaIcons
+                                color={theme.palette.custom.light}
+                            />
+                        </Box>
+                    </Grid>
                 </Grid>
-                <Grid item xs={12} md={4}>
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: { xs: "center", md: "end" },
-                        }}
-                    >
-                        <Link href="/contact">
-                            <Button variant="outlined">contact</Button>
-                        </Link>
-                    </Box>
-                </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </Box>
     );
 };
 
