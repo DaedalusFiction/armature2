@@ -13,7 +13,7 @@ const Footer = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box>
-                            <Box
+                            {/* <Box
                                 sx={{
                                     display: "flex",
                                     gap: "1rem",
@@ -58,7 +58,7 @@ const Footer = () => {
                                         hello@armature.studio
                                     </a>
                                 </ExpandingText>
-                            </Box>
+                            </Box> */}
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>
