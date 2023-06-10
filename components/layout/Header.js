@@ -1,23 +1,30 @@
-import { Fade, Typography } from "@mui/material";
+import {
+    Button,
+    Grid,
+    IconButton,
+    Menu,
+    MenuItem,
+    Typography,
+} from "@mui/material";
 import { Box, Container } from "@mui/system";
-import { useState } from "react";
-import { useEffect } from "react";
-import theme from "../../styles/themes/theme";
-import NavMenu from "./NavMenu";
 import Link from "next/link";
-import HeaderLines from "../animations/HeaderLines";
+import { pages, header, siteName, leftPages, rightPages } from "../../siteInfo";
+import MenuIcon from "@mui/icons-material/Menu";
+import theme from "../../styles/themes/theme";
+import NavBarLinkAnimation from "../general/NavBarLinkAnimation";
+import TextJustify from "../general/TextJustify";
+import { useEffect, useState } from "react";
+import HamburgerNav from "./HamburgerNav";
 
-const Header = () => {
-    const [scrollPosition, setScrollPosition] = useState(66);
+const Header = ({ light }) => {
+    const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
-        // console.log(position);
     };
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        setScrollPosition(window.pageYOffset);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -28,81 +35,156 @@ const Header = () => {
         <Box
             sx={{
                 position: "fixed",
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
                 top: "0",
                 left: "0",
-                zIndex: "100",
-                width: "100%",
-                padding: ".75rem 0",
-                transition: "1000ms",
-                // boxShadow:
-                //     scrollPosition > 65
-                //         ? "0px 5px 5px rgba(0, 0, 0, 0.2)"
-                //         : "transparent",
-                backgroundColor:
-                    scrollPosition > 67
-                        ? theme.palette.primary.main
+                zIndex: "2",
+                padding: "1rem 0",
+                transition: "400ms",
+                background:
+                    scrollPosition > 30
+                        ? theme.palette.custom.dark
                         : "transparent",
             }}
         >
             <Container maxWidth="xl">
-                <Box
-                    sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        transition: "1650ms",
-                        transform:
-                            scrollPosition > 65
-                                ? "translateY(0) rotate(0)"
-                                : "translateY(35vh) rotate(-25deg)",
-                    }}
-                >
-                    <Box>
-                        <Box sx={{ position: "relative" }}>
-                            <Box
-                                sx={{
-                                    transition: "1650ms",
-                                    opacity: scrollPosition > 65 ? "0" : "100%",
-                                }}
-                            >
-                                <HeaderLines />
-                            </Box>
+                <Grid container>
+                    <Grid item xs={3}>
+                        <HamburgerNav />
+                    </Grid>
+                    <Grid item xs={9}>
+                        <Box
+                            sx={{
+                                display: { xs: "flex", lg: "none" },
+                                alignItems: "center",
+                                justifyContent: "end",
+                                paddingRight: "1em",
+                                height: "100%",
+                            }}
+                        >
                             <Typography
                                 variant="h1"
                                 sx={{
-                                    color: theme.palette.background.default,
-                                    transition: "1650ms",
-                                    paddingTop: "4px",
-                                    fontSize: {
-                                        xs:
-                                            scrollPosition > 450
-                                                ? "2.5rem"
-                                                : "4.5rem",
-                                        md:
-                                            scrollPosition > 450
-                                                ? "3rem"
-                                                : "12rem",
-                                    },
+                                    margin: "0",
+                                    transition: "150ms",
+                                    textAlign: "center",
+                                    cursor: "pointer",
+                                    fontSize: "2rem",
+                                    color: theme.palette.primary.main,
                                 }}
                             >
-                                <Link href="/">ARMATURE</Link>
+                                <Link href="/">BASILINDA</Link>
+
+                                <TextJustify>
+                                    A Queer & Feminist Journal
+                                </TextJustify>
                             </Typography>
                         </Box>
-                    </Box>
-                    <Box
-                        sx={{
-                            position: "absolute",
-
-                            top: "0",
-                            right: "0",
-                        }}
-                    >
-                        <Fade in={scrollPosition > 650}>
-                            <div>
-                                <NavMenu />
-                            </div>
-                        </Fade>
-                    </Box>
+                    </Grid>
+                </Grid>
+                {/* desktop view */}
+                <Box sx={{ display: { xs: "none", lg: "inherit" } }}>
+                    <Grid container>
+                        <Grid item xs={4.25}>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "space-evenly",
+                                    width: "100%",
+                                    height: "100%",
+                                    gap: "1.5em",
+                                }}
+                            >
+                                {leftPages.map((page, index) => (
+                                    <Link href={page.href} key={index}>
+                                        <Typography
+                                            className="link"
+                                            sx={{
+                                                textAlign: "center",
+                                                textTransform: "uppercase",
+                                            }}
+                                        >
+                                            {page.name}
+                                        </Typography>
+                                    </Link>
+                                ))}
+                            </Box>
+                        </Grid>
+                        <Grid item xs={3.5}>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    height: "100%",
+                                    gap: ".5em",
+                                }}
+                            >
+                                {/* <Box sx={{ height: "100%" }}>
+                                            <NativeImage
+                                                image={navbar.image}
+                                                maxSize={85}
+                                            />
+                                        </Box> */}
+                                <Box>
+                                    <Link href="/">
+                                        <Typography
+                                            // className="nav-link"
+                                            variant="h1"
+                                            sx={{
+                                                margin: "0",
+                                                transition: "300ms",
+                                                textAlign: "center",
+                                                cursor: "pointer",
+                                                letterSpacing: ".1em",
+                                                fontSize: "2.5rem",
+                                                color: theme.palette.primary
+                                                    .main,
+                                                "&:hover": {
+                                                    color: theme.palette.primary
+                                                        .off,
+                                                },
+                                            }}
+                                        >
+                                            BASILINDA
+                                        </Typography>
+                                    </Link>
+                                    <TextJustify>
+                                        A Queer & Feminist Journal
+                                    </TextJustify>
+                                </Box>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={4.25}>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "space-evenly",
+                                    width: "100%",
+                                    height: "100%",
+                                    gap: "1.25em",
+                                }}
+                            >
+                                {rightPages.map((page, index) => (
+                                    <Link href={page.href} key={index}>
+                                        <Typography
+                                            className="link"
+                                            sx={{
+                                                textAlign: "center",
+                                                textTransform: "uppercase",
+                                            }}
+                                        >
+                                            {page.name}
+                                        </Typography>
+                                    </Link>
+                                ))}
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </Box>
             </Container>
         </Box>
@@ -110,58 +192,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// function buildThresholdList() {
-//     let thresholds = [];
-//     let numSteps = 20;
-
-//     for (let i = 1.0; i <= numSteps; i++) {
-//         let ratio = i / numSteps;
-//         thresholds.push(ratio);
-//     }
-
-//     thresholds.push(0);
-//     return thresholds;
-// }
-// const [titleAngle, setTitleAngle] = useState(0);
-// const [prevRatio, setPrevRatio] = useState(0.0);
-// let increasingColor = "rgba(40, 40, 190, ratio)";
-// let decreasingColor = "rgba(190, 40, 40, ratio)";
-// const titleRef = useRef(null);
-// useEffect(() => {
-//     let observer = new IntersectionObserver(rotateTitle, options);
-//     let options = {
-//         // root: document.querySelector("#scrollArea"),
-//         rootMargin: "0px",
-//         thresholds: buildThresholdList(),
-//     };
-//     const setObservation = () => {
-//         observer.observe(titleRef.current);
-//     };
-//     setObservation();
-//     return observer.unobserve(titleRef.current);
-// }, []);
-//old version
-{
-    /* <Box sx={{ display: "flex", justifyContent: "center" }}>
-    <Box
-    //hacky shit to animate scroll effect
-    sx={{
-        transform: `rotate(clamp(-27deg, calc(-27deg * ${
-                -scrollPosition / 365
-            } - 27deg), 0deg)) translateY(clamp(0rem, calc(15rem * ${
-                -scrollPosition / 365
-            } + 15rem) , 15rem ))`,
-            
-            position: "relative",
-            outline: "2px solid white",
-            width: "fit-content",
-        }}
-        >
-        <Box sx={{ position: "fixed", top: "0", left: "0" }}></Box>
-        <Typography variant="h1" sx={{ color: "#ee8012" }}>
-            ARMATURE
-        </Typography>
-    </Box>
-</Box>; */
-}
