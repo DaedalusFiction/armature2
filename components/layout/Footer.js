@@ -6,7 +6,6 @@ import React from "react";
 import theme from "../../styles/themes/theme";
 import ExpandingText from "../general/ExpandingText";
 import SocialMediaIcons from "../general/SocialMediaIcons";
-import Line from "../animations/Line";
 
 const Footer = () => {
     return (
