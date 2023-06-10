@@ -9,7 +9,6 @@ import ContactPanel from "../components/contact/ContactPanel";
 import PortfolioProject from "../components/portfolio/PortfolioProject";
 import ImageWithFade from "../components/general/ImageWithFade";
 import Header from "../components/layout/Header";
-import { useEffect } from "react";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;

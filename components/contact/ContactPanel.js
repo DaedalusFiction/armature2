@@ -3,7 +3,6 @@ import TextHighlight from "../general/TextHighlight";
 import { contactConfig } from "../../siteInfo";
 import ContactForm from "./ContactForm";
 import theme from "../../styles/themes/theme";
-import Line from "../animations/Line";
 
 const ContactPanel = () => {
     return (
@@ -18,7 +17,6 @@ const ContactPanel = () => {
                     >
                         CONTACT
                     </Typography>
-                    <Line color={theme.palette.custom.darkMuted} />
                     <Typography>
                         you likely only have one life to live. why wait? fill
                         out this form and we will be in touch.

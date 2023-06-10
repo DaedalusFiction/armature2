@@ -1,6 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import Line from "../animations/Line";
 import ImageWithFade from "../general/ImageWithFade";
 import Link from "next/link";
 import { ArrowRightAlt } from "@mui/icons-material";
@@ -30,10 +29,6 @@ const PortfolioProject = ({ project, index }) => {
                         }}
                     >
                         <Box>
-                            <Line
-                                color={theme.palette.background.default}
-                                reversed
-                            />
                             <Typography
                                 variant="h3"
                                 sx={{
@@ -74,9 +69,6 @@ const PortfolioProject = ({ project, index }) => {
                             position: "relative",
                         }}
                     >
-                        <Box sx={{ display: { xs: "none", md: "inherit" } }}>
-                            <Line color={theme.palette.background.default} />
-                        </Box>
                         <Box
                             className="screencap"
                             sx={{ position: "relative" }}
