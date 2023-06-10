@@ -12,7 +12,6 @@ const Footer = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box>
-                            {/* <Line reversed color="white" /> */}
                             <Box
                                 sx={{
                                     display: "flex",
@@ -38,8 +37,6 @@ const Footer = () => {
                                     marginTop: ".5rem",
                                 }}
                             >
-                                {/* <Line reversed color="white" /> */}
-
                                 <ExpandingText>
                                     <a
                                         style={{
