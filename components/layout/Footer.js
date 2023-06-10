@@ -3,7 +3,6 @@ import { Box, Container } from "@mui/system";
 import React from "react";
 import SocialMediaIcons from "../general/SocialMediaIcons";
 import theme from "../../styles/themes/theme";
-import { HouseOutlined, MailOutline } from "@mui/icons-material";
 
 const Footer = () => {
     return (
@@ -19,11 +18,11 @@ const Footer = () => {
                                     alignItems: "center",
                                 }}
                             >
-                                <HouseOutlined
+                                {/* <HouseOutlined
                                     sx={{
                                         color: theme.palette.custom.lightMuted,
                                     }}
-                                />
+                                /> */}
                                 <Box>
                                     <Typography
                                         sx={{
@@ -42,11 +41,11 @@ const Footer = () => {
                                     marginTop: ".5rem",
                                 }}
                             >
-                                <MailOutline
+                                {/* <MailOutline
                                     sx={{
                                         color: theme.palette.custom.lightMuted,
                                     }}
-                                />
+                                /> */}
                                 {/* <ExpandingText>
                                     <a
                                         style={{
