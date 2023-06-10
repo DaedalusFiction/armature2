@@ -1,10 +1,15 @@
-import { Box } from "@mui/system";
+import { HouseOutlined, MailOutline } from "@mui/icons-material";
+import { Grid, Typography } from "@mui/material";
+import { Box, Container } from "@mui/system";
 import React from "react";
+import theme from "../../styles/themes/theme";
+import ExpandingText from "../general/ExpandingText";
+import SocialMediaIcons from "../general/SocialMediaIcons";
 
 const Footer = () => {
     return (
-        <Box>
-            {/* <Container maxWidth="xl">
+        <Box sx={{ background: theme.palette.primary.main, padding: "4rem 0" }}>
+            <Container maxWidth="xl">
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box>
@@ -64,13 +69,13 @@ const Footer = () => {
                                 alignItems: { xs: "start", md: "end" },
                             }}
                         >
-                            <SocialMediaIcons
+                            {/* <SocialMediaIcons
                                 color={theme.palette.custom.light}
-                            />
+                            /> */}
                         </Box>
                     </Grid>
                 </Grid>
-            </Container> */}
+            </Container>
         </Box>
     );
 };

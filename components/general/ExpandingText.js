@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import theme from "../../styles/themes/theme";
 import { Typography } from "@mui/material";
 
