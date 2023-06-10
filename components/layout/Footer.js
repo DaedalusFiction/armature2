@@ -3,6 +3,7 @@ import { Box, Container } from "@mui/system";
 import React from "react";
 import SocialMediaIcons from "../general/SocialMediaIcons";
 import theme from "../../styles/themes/theme";
+import ExpandingText from "../general/ExpandingText";
 
 const Footer = () => {
     return (
@@ -46,7 +47,7 @@ const Footer = () => {
                                         color: theme.palette.custom.lightMuted,
                                     }}
                                 /> */}
-                                {/* <ExpandingText>
+                                <ExpandingText>
                                     <a
                                         style={{
                                             color: theme.palette.custom.light,
@@ -55,7 +56,7 @@ const Footer = () => {
                                     >
                                         hello@armature.studio
                                     </a>
-                                </ExpandingText> */}
+                                </ExpandingText>
                             </Box>
                         </Box>
                     </Grid>
