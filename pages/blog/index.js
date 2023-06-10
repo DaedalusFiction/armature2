@@ -1,33 +1,31 @@
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import React from "react";
-import PostsIndex from "../../components/blog/PostsIndex";
+import PublicationIndex from "../../components/layout/PublicationIndex";
 import { db } from "../../firebase";
-// import PublicationIndex from "../../../components/layout/PublicationIndex";
-
 const category = "Design";
 
-const index = ({ posts }) => {
-    return <PostsIndex category={category} posts={posts} />;
+const index = ({ items }) => {
+    return <PublicationIndex category={category} items={items} isGrid />;
 };
 
 export const getServerSideProps = async (context) => {
     const publicationsRef = collection(db, "blog");
-    const postsQuery = query(
+    const itemsQuery = query(
         publicationsRef,
         where("categories", "array-contains", category),
         orderBy("dateUploaded", "desc")
     );
 
-    const postsSnapshot = await getDocs(postsQuery);
+    const itemsSnapshot = await getDocs(itemsQuery);
 
-    let posts = [];
-    postsSnapshot.docs.forEach((doc, index) => {
-        posts = [...posts, { data: doc.data(), id: doc.id }];
+    let items = [];
+    itemsSnapshot.docs.forEach((doc, index) => {
+        items = [...items, { data: doc.data(), id: doc.id }];
     });
 
     return {
         props: {
-            posts,
+            items,
         },
     };
 };

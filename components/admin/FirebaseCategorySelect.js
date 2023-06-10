@@ -89,9 +89,6 @@ const FirebaseCategorySelect = ({
                         >
                             <ListItemButton>
                                 <ListItemText
-                                    primaryTypographyProps={{
-                                        fontSize: "1rem",
-                                    }}
                                     // id={labelId}
                                     primary={category.name}
                                 />
@@ -131,9 +128,6 @@ const FirebaseCategorySelect = ({
                                         >
                                             <ListItemButton>
                                                 <ListItemText
-                                                    primaryTypographyProps={{
-                                                        fontSize: "1rem",
-                                                    }}
                                                     // id={labelId}
                                                     primary={subCategory.name}
                                                 />

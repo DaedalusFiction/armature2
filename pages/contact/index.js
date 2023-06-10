@@ -1,9 +1,8 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import PageLayout from "../../components/layout/PageLayout";
 import ContactForm from "../../components/contact/ContactForm";
 import { contactConfig } from "../../siteInfo";
-import TextHighlight from "../../components/general/TextHighlight";
 
 const index = () => {
     return (
@@ -11,42 +10,18 @@ const index = () => {
             <Container maxWidth="lg" className="section">
                 <Grid container spacing={6}>
                     <Grid item xs={12} md={6}>
-                        <Typography
-                            variant="h4"
-                            sx={{
-                                textAlign: "center",
-                                fontWeight: "600",
-                            }}
-                        >
-                            <TextHighlight>Inquiries</TextHighlight>
-                        </Typography>
-                        <Divider sx={{ margin: "1rem" }} />
-                        <Typography>Tell us what you are thinking.</Typography>
+                        <Typography variant="h3">Get in Touch</Typography>
                         <br />
-                        <Grid container spacing={2}>
-                            <Grid item xs={3}>
-                                <Typography sx={{ fontStyle: "italic" }}>
-                                    Email:
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={9}>
-                                <Typography>
-                                    inquiries@sparrowhawk.club
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={3}>
-                                <Typography sx={{ fontStyle: "italic" }}>
-                                    Address:
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={9}>
-                                <Box>
-                                    <Typography>
-                                        Provided on Acceptance
-                                    </Typography>
-                                </Box>
-                            </Grid>
-                        </Grid>
+                        <Typography>
+                            Have a comment or suggestion? Feel a strong urge to
+                            tell us how much you like or hate one of our
+                            stories? Just want to shoot the shit? Send us a
+                            comment!
+                        </Typography>
+                        <br />
+                        <Typography>
+                            Or email us at teardownthismall@gmail.com.
+                        </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <ContactForm config={contactConfig} />

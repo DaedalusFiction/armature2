@@ -1,4 +1,11 @@
-import { Button, Typography } from "@mui/material";
+import {
+    Button,
+    Input,
+    MenuItem,
+    Select,
+    TextField,
+    Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import ContactFormField from "./ContactFormField";
@@ -21,25 +28,14 @@ const ContactForm = ({ config }) => {
 
         emailjs
             .send(
-                "service_426n368",
-                "template_ynu5a9o",
+                "service_t1yo7dn",
+                "template_pfang7n",
                 templateParams,
-                "HWFSg6moAb3K2Qgbh"
+                "aMDOy4kUud9rd0Yg9"
             )
             .then(function () {
                 setIsSubmitted(true);
             });
-        // David's Email Account
-        // emailjs
-        //     .send(
-        //         "service_z7hpw17",
-        //         "template_pfang7n",
-        //         templateParams,
-        //         "aMDOy4kUud9rd0Yg9"
-        //     )
-        //     .then(function () {
-        //         setIsSubmitted(true);
-        //     });
     };
 
     return (
@@ -48,6 +44,7 @@ const ContactForm = ({ config }) => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "1em",
+                minWidth: "45ch",
             }}
         >
             {!isSubmitted ? (
@@ -64,7 +61,11 @@ const ContactForm = ({ config }) => {
                             </Box>
                         );
                     })}
-                    <Button variant="contained" onClick={handleSendEmail}>
+                    <Button
+                        color="secondary"
+                        variant="contained"
+                        onClick={handleSendEmail}
+                    >
                         Submit
                     </Button>
                 </>
