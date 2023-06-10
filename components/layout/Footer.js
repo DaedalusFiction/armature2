@@ -3,6 +3,7 @@ import { Box, Container } from "@mui/system";
 import React from "react";
 import SocialMediaIcons from "../general/SocialMediaIcons";
 import theme from "../../styles/themes/theme";
+import { HouseOutlined, MailOutline } from "@mui/icons-material";
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box>
-                            {/* <Box
+                            <Box
                                 sx={{
                                     display: "flex",
                                     gap: "1rem",
@@ -46,7 +47,7 @@ const Footer = () => {
                                         color: theme.palette.custom.lightMuted,
                                     }}
                                 />
-                                <ExpandingText>
+                                {/* <ExpandingText>
                                     <a
                                         style={{
                                             color: theme.palette.custom.light,
@@ -55,8 +56,8 @@ const Footer = () => {
                                     >
                                         hello@armature.studio
                                     </a>
-                                </ExpandingText>
-                            </Box> */}
+                                </ExpandingText> */}
+                            </Box>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>

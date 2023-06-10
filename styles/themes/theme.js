@@ -10,8 +10,8 @@ let theme = createTheme({
         },
         secondary: {
             // main: "#dcd930", //yellowish
-            main: "#e4b363", //yellowish
-            main: "#FED766", //yellowish
+            // main: "#e4b363", //yellowish
+            // main: "#FED766", //yellowish
             main: "#CAFE48", //yellowish
         },
         background: {
