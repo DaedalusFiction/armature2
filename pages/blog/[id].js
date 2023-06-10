@@ -8,15 +8,15 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import Publication from "../../components/layout/Publication";
 import { db } from "../../firebase";
+import Post from "../../components/blog/Post";
 
 const sidebarCategory = "Design";
 
-const page = ({ sidebarItems, publication }) => {
+const page = ({ sidebarItems, post }) => {
     return (
-        <Publication
-            publication={publication}
+        <Post
+            post={post}
             sidebarCategory={sidebarCategory}
             sidebarItems={sidebarItems}
         />
@@ -25,13 +25,13 @@ const page = ({ sidebarItems, publication }) => {
 
 export const getServerSideProps = async (context) => {
     const docSnap = await getDoc(doc(db, `blog/${context.params.id}`));
-    let publication = docSnap.data();
+    let post = docSnap.data();
 
-    const publicationsRef = collection(db, "blog");
+    const postsRef = collection(db, "blog");
 
     const sidebarItemsQuery = query(
-        publicationsRef,
-        where("categories", "array-contains", sidebarCategory.toLowerCase()),
+        postsRef,
+        where("categories", "array-contains", "Design"),
         orderBy("dateUploaded", "desc"),
         limit(2)
     );
@@ -40,13 +40,13 @@ export const getServerSideProps = async (context) => {
 
     let sidebarItems = [];
     sidebarItemsSnapshot.docs.forEach((doc, index) => {
-        sidebarItems = [...sidebarItems, doc.data()];
+        sidebarItems = [...sidebarItems, { data: doc.data(), id: doc.id }];
     });
 
     return {
         props: {
             sidebarItems,
-            publication,
+            post,
         },
     };
 };

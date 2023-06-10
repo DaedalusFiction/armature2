@@ -1,10 +1,9 @@
-import { Grid, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
-import SocialMediaIcons from "../general/SocialMediaIcons";
 import theme from "../../styles/themes/theme";
 import ExpandingText from "../general/ExpandingText";
-import { HouseOutlined } from "@mui/icons-material";
+import SocialMediaIcons from "../general/SocialMediaIcons";
 
 const Footer = () => {
     return (
@@ -13,6 +12,7 @@ const Footer = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box>
+                            {/* <Line reversed color="white" /> */}
                             <Box
                                 sx={{
                                     display: "flex",
@@ -20,11 +20,6 @@ const Footer = () => {
                                     alignItems: "center",
                                 }}
                             >
-                                <HouseOutlined
-                                    sx={{
-                                        color: theme.palette.custom.lightMuted,
-                                    }}
-                                />
                                 <Box>
                                     <Typography
                                         sx={{
@@ -43,11 +38,8 @@ const Footer = () => {
                                     marginTop: ".5rem",
                                 }}
                             >
-                                {/* <MailOutline
-                                    sx={{
-                                        color: theme.palette.custom.lightMuted,
-                                    }}
-                                /> */}
+                                {/* <Line reversed color="white" /> */}
+
                                 <ExpandingText>
                                     <a
                                         style={{
@@ -69,7 +61,9 @@ const Footer = () => {
                                 alignItems: { xs: "start", md: "end" },
                             }}
                         >
-                            <SocialMediaIcons />
+                            <SocialMediaIcons
+                                color={theme.palette.custom.light}
+                            />
                         </Box>
                     </Grid>
                 </Grid>

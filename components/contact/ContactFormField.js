@@ -24,8 +24,8 @@ const ContactFormField = ({ field, formData, setFormData, index }) => {
             return (
                 <TextField
                     fullWidth
+                    focused
                     type={field.type}
-                    color="secondary"
                     label={field.name}
                     multiline={field.multiline}
                     rows={field.rows}
