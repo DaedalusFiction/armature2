@@ -8,8 +8,8 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import { db } from "../../../firebase";
-import Publication from "../../../components/layout/Publication";
+import Publication from "../../components/layout/Publication";
+import { db } from "../../firebase";
 
 const sidebarCategory = "Design";
 
