@@ -4,6 +4,7 @@ import React from "react";
 import SocialMediaIcons from "../general/SocialMediaIcons";
 import theme from "../../styles/themes/theme";
 import ExpandingText from "../general/ExpandingText";
+import { HouseOutlined } from "@mui/icons-material";
 
 const Footer = () => {
     return (
@@ -19,11 +20,11 @@ const Footer = () => {
                                     alignItems: "center",
                                 }}
                             >
-                                {/* <HouseOutlined
+                                <HouseOutlined
                                     sx={{
                                         color: theme.palette.custom.lightMuted,
                                     }}
-                                /> */}
+                                />
                                 <Box>
                                     <Typography
                                         sx={{
