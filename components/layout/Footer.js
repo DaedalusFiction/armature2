@@ -2,10 +2,11 @@ import { Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
 import SocialMediaIcons from "../general/SocialMediaIcons";
+import theme from "../../styles/themes/theme";
 
 const Footer = () => {
     return (
-        <Box sx={{ padding: "4rem 0" }}>
+        <Box sx={{ background: theme.palette.primary.main, padding: "4rem 0" }}>
             <Container maxWidth="xl">
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
