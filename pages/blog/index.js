@@ -2,12 +2,22 @@ import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import React from "react";
 import PostsIndex from "../../components/blog/PostsIndex";
 import { db } from "../../firebase";
+import PageLayout from "../../components/layout/PageLayout";
+import { Container, Typography } from "@mui/material";
 // import PublicationIndex from "../../../components/layout/PublicationIndex";
 
 const category = "Design";
 
 const index = ({ posts }) => {
-    return <PostsIndex category={category} posts={posts} />;
+    return (
+        <PageLayout name="Blog">
+            <Container>
+                <Typography variant="h5">Design:</Typography>
+                <br />
+                <PostsIndex category={category} posts={posts} isGrid />
+            </Container>
+        </PageLayout>
+    );
 };
 
 export const getServerSideProps = async (context) => {

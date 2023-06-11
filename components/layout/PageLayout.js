@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import PageHeader from "../layout/PageHeader";
+import Footer from "./Footer";
 const PageLayout = ({ name, children }) => {
     return (
         <Box sx={{ padding: "0 0 6rem 0", position: "relative" }}>
@@ -26,6 +27,7 @@ const PageLayout = ({ name, children }) => {
                 </Typography>
             </Box>
             {children}
+            {/* <Footer /> */}
         </Box>
     );
 };

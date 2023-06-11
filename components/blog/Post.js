@@ -1,16 +1,14 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import PostBody from "./PostBody";
+import theme from "../../styles/themes/theme";
+import ImageWithFade from "../general/ImageWithFade";
+import PreviewsSidebar from "./PreviewsSidebar";
 
 const Post = ({ post, sidebarItems, sidebarCategory }) => {
     return (
-        <Box>
+        <Container>
             <Box
                 sx={{
-                    backgroundImage:
-                        "linear-gradient(rgba(39, 45, 45, 0.65), rgba(39, 45, 45, 1)), url(/images/collage-background.webp)",
-                    // "linear-gradient(rgba(233, 214, 214, 0.8), rgba(233, 224, 214, 0.8)), url(/images/collage-background.webp)",
-                    backgroundSize: "cover",
-                    // backgroundAttachment: "fixed",
                     padding: "12rem 0 4rem 0",
                 }}
             >
@@ -19,6 +17,7 @@ const Post = ({ post, sidebarItems, sidebarCategory }) => {
                         margin: ".25em 0",
                         fontSize: "3rem",
                         textAlign: "center",
+                        color: theme.palette.custom.dark,
                     }}
                     variant="h1"
                 >
@@ -45,19 +44,28 @@ const Post = ({ post, sidebarItems, sidebarCategory }) => {
                 </Typography>
             </Box>
             <Container>
-                <Grid container>
-                    <Grid item xs={12}>
-                        <Box>
-                            <PostBody
-                                sidebarCategory={sidebarCategory}
-                                sidebarItems={sidebarItems}
-                                post={post}
-                            />
-                        </Box>
+                <Grid container spacing={4}>
+                    <Grid item xs={12} md={8}>
+                        <ImageWithFade
+                            maxSize={1200}
+                            src={post.URLs[0]}
+                            alt="Jorge Luis Borges sitting at his desk"
+                        />
+                        <PostBody
+                            sidebarCategory={sidebarCategory}
+                            sidebarItems={sidebarItems}
+                            post={post}
+                        />
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <PreviewsSidebar
+                            sidebarCategory={sidebarCategory}
+                            sidebarItems={sidebarItems}
+                        />
                     </Grid>
                 </Grid>
             </Container>
-        </Box>
+        </Container>
     );
 };
 
