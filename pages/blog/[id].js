@@ -10,16 +10,19 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase";
 import Post from "../../components/blog/Post";
+import PageLayout from "../../components/layout/PageLayout";
 
 const sidebarCategory = "Design";
 
 const page = ({ sidebarItems, post }) => {
     return (
-        <Post
-            post={post}
-            sidebarCategory={sidebarCategory}
-            sidebarItems={sidebarItems}
-        />
+        <PageLayout name="">
+            <Post
+                post={post}
+                sidebarCategory={sidebarCategory}
+                sidebarItems={sidebarItems}
+            />
+        </PageLayout>
     );
 };
 

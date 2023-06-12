@@ -6,44 +6,43 @@ import PreviewsSidebar from "./PreviewsSidebar";
 
 const Post = ({ post, sidebarItems, sidebarCategory }) => {
     return (
-        <Container>
-            <Box
-                sx={{
-                    padding: "12rem 0 4rem 0",
-                }}
-            >
-                <Typography
-                    sx={{
-                        margin: ".25em 0",
-                        fontSize: "3rem",
-                        textAlign: "center",
-                        color: theme.palette.custom.dark,
-                    }}
-                    variant="h1"
-                >
-                    {post.fields[0].value}
-                </Typography>
-                <Typography
-                    sx={{
-                        fontStyle: "italic",
-                        margin: ".25em 0",
-                        fontSize: ".75rem",
-                        textAlign: "center",
-                    }}
-                >
-                    by
-                </Typography>
-                <Typography
-                    sx={{
-                        margin: ".25em 0",
-                        fontSize: "1.25rem",
-                        textAlign: "center",
-                    }}
-                >
-                    {post.fields[1].value}
-                </Typography>
-            </Box>
+        <>
             <Container>
+                <Box
+                    sx={{
+                        padding: "0rem 0 4rem 0",
+                    }}
+                >
+                    <Typography
+                        sx={{
+                            margin: ".25em 0",
+                            textAlign: "center",
+                            color: theme.palette.custom.dark,
+                        }}
+                        variant="h1"
+                    >
+                        {post.fields[0].value}
+                    </Typography>
+                    <Typography
+                        sx={{
+                            fontStyle: "italic",
+                            margin: ".25em 0",
+                            fontSize: ".75rem",
+                            textAlign: "center",
+                        }}
+                    >
+                        by
+                    </Typography>
+                    <Typography
+                        sx={{
+                            margin: ".25em 0",
+                            fontSize: "1.25rem",
+                            textAlign: "center",
+                        }}
+                    >
+                        {post.fields[1].value}
+                    </Typography>
+                </Box>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={8}>
                         <ImageWithFade
@@ -65,7 +64,7 @@ const Post = ({ post, sidebarItems, sidebarCategory }) => {
                     </Grid>
                 </Grid>
             </Container>
-        </Container>
+        </>
     );
 };
 

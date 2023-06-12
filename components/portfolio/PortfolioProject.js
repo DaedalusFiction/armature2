@@ -71,7 +71,7 @@ const PortfolioProject = ({ project, index }) => {
                     >
                         <Box
                             className="screencap"
-                            sx={{ position: "relative" }}
+                            sx={{ position: "relative", marginBottom: "1rem" }}
                         >
                             <ImageWithFade
                                 src={project.src}

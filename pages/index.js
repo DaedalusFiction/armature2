@@ -103,6 +103,7 @@ export default function Home() {
                         <Grid item xs={12} md={7}>
                             <Typography
                                 variant="body2"
+                                className="sticky"
                                 // sx={{ textTransform: "uppercase" }}
                             >
                                 with more than{" "}

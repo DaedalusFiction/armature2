@@ -9,7 +9,7 @@ const PostsIndex = ({ category, posts, isGrid }) => {
             <Grid container>
                 {posts.map((post, index) => {
                     return (
-                        <Grid key={index} item xs={isGrid ? 4 : 12}>
+                        <Grid key={index} item xs={12} md={isGrid ? 4 : 12}>
                             <PostPreview
                                 post={post.data}
                                 id={post.id}
