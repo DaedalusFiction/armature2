@@ -10,6 +10,7 @@ import PortfolioProject from "../components/portfolio/PortfolioProject";
 import ImageWithFade from "../components/general/ImageWithFade";
 import Header from "../components/layout/Header";
 import ShrinkingImage from "../components/animations/ShrinkingImage";
+import Line from "../components/animations/Line";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
@@ -89,7 +90,8 @@ export default function Home() {
                                     maxSize={800}
                                     filter={theme.palette.primary.overlay}
                                 /> */}
-                                <ShrinkingImage />
+                                {/* <ShrinkingImage /> */}
+                                <Line color="black" />
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={5}>

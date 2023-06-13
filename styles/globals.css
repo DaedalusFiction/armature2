@@ -282,3 +282,12 @@ a {
     transform: translateY(calc(-100% + 20rem));
     transition: 7s ease-in-out;
 }
+
+#thirdCircle {
+    background-color: black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 2px solid yellow;
+    margin-bottom: 80%;
+}
