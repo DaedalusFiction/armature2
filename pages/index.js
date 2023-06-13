@@ -9,6 +9,7 @@ import ContactPanel from "../components/contact/ContactPanel";
 import PortfolioProject from "../components/portfolio/PortfolioProject";
 import ImageWithFade from "../components/general/ImageWithFade";
 import Header from "../components/layout/Header";
+import ShrinkingImage from "../components/animations/ShrinkingImage";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
@@ -55,7 +56,7 @@ export default function Home() {
                                 <Typography
                                     variant="body2"
                                     className="sticky"
-                                    // sx={{ textTransform: "uppercase" }}
+                                    sx={{ maxWidth: "45ch" }}
                                 >
                                     we are a narrative-driven{" "}
                                     <HighlightedText>
@@ -82,12 +83,13 @@ export default function Home() {
                         </Grid>
                         <Grid item xs={12} md={5}>
                             <Box sx={{ transform: "translateY(1rem)" }}>
-                                <ImageWithFade
+                                {/* <ImageWithFade
                                     src="/images/profile-river5.jpg"
                                     alt="Dave Sorensen sitting on a rock"
                                     maxSize={800}
                                     filter={theme.palette.primary.overlay}
-                                />
+                                /> */}
+                                <ShrinkingImage />
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={5}>
@@ -104,7 +106,7 @@ export default function Home() {
                             <Typography
                                 variant="body2"
                                 className="sticky"
-                                // sx={{ textTransform: "uppercase" }}
+                                sx={{ maxWidth: "35ch" }}
                             >
                                 with more than{" "}
                                 <HighlightedText>
