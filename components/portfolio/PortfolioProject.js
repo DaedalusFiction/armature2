@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRightAlt } from "@mui/icons-material";
 import ExpandingText from "../general/ExpandingText";
 import theme from "../../styles/themes/theme";
+import Line from "../animations/Line";
 
 const PortfolioProject = ({ project, index }) => {
     return (
@@ -20,6 +21,7 @@ const PortfolioProject = ({ project, index }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={9.5} md={5} order={{ xs: 3, md: 2 }}>
+                    <Line color={theme.palette.background.default} reversed />
                     <Box
                         sx={{
                             display: "flex",
@@ -45,25 +47,11 @@ const PortfolioProject = ({ project, index }) => {
                                 {project.description}
                             </Typography>
                         </Box>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                justifyContent: "end",
-                                marginTop: "2rem",
-                            }}
-                        >
-                            <ExpandingText
-                                color={theme.palette.background.default}
-                            >
-                                <Link href={project.href}>Visit Website</Link>
-                            </ExpandingText>
-                            <ArrowRightAlt
-                                sx={{ color: theme.palette.background.default }}
-                            />
-                        </Box>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={5} order={{ xs: 1, md: 3 }}>
+                    <Line color={theme.palette.background.default} />
+
                     <Box
                         sx={{
                             position: "relative",
@@ -78,6 +66,7 @@ const PortfolioProject = ({ project, index }) => {
                                 maxSize={600}
                                 alt="rumen screencap"
                             />
+
                             <Box
                                 sx={{
                                     position: "absolute",
@@ -89,6 +78,22 @@ const PortfolioProject = ({ project, index }) => {
                                     width: "100%",
                                     zIndex: "5",
                                 }}
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                justifyContent: "end",
+                                marginTop: "2rem",
+                            }}
+                        >
+                            <ExpandingText
+                                color={theme.palette.background.default}
+                            >
+                                <Link href={project.href}>Visit Website</Link>
+                            </ExpandingText>
+                            <ArrowRightAlt
+                                sx={{ color: theme.palette.background.default }}
                             />
                         </Box>
                     </Box>

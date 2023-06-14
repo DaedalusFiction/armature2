@@ -9,9 +9,10 @@ import ContactPanel from "../components/contact/ContactPanel";
 import PortfolioProject from "../components/portfolio/PortfolioProject";
 import ImageWithFade from "../components/general/ImageWithFade";
 import Header from "../components/layout/Header";
-import ShrinkingImage from "../components/animations/ShrinkingImage";
 import Line from "../components/animations/Line";
 import TextMarquee from "../components/animations/TextMarquee";
+import ImageFadingIn from "../components/animations/ImageFadingIn";
+import PortfolioSection from "../components/home/PortfolioSection";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
@@ -50,7 +51,13 @@ export default function Home() {
             <Meta />
             <Header />
             <Hero />
-            <TextMarquee />
+
+            <Box sx={{ backgroundColor: theme.palette.primary.main }}>
+                <Container maxWidth="xl">
+                    <PortfolioSection />
+                </Container>
+            </Box>
+
             <Container maxWidth="xl">
                 <Box className="section" id="about">
                     <Grid container spacing={6}>
@@ -85,24 +92,19 @@ export default function Home() {
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={5}>
-                            <Box sx={{ transform: "translateY(1rem)" }}>
-                                {/* <ImageWithFade
-                                    src="/images/profile-river5.jpg"
-                                    alt="Dave Sorensen sitting on a rock"
-                                    maxSize={800}
-                                    filter={theme.palette.primary.overlay}
-                                /> */}
-                                <ShrinkingImage />
-                                {/* <Line color="black" /> */}
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={5}>
-                            <Box sx={{ transform: "translateY(1rem)" }}>
-                                <ImageWithFade
+                            <Box>
+                                <ImageFadingIn
                                     src="/images/jonathan.webp"
                                     alt="Jonathan Clark on a farm"
-                                    maxSize={800}
-                                    filter={theme.palette.primary.overlay}
+                                />
+                            </Box>
+                        </Grid>
+
+                        <Grid item xs={12} md={5}>
+                            <Box>
+                                <ImageFadingIn
+                                    src="/images/profile-river5.jpg"
+                                    alt="Dave sitting on a rock in a river"
                                 />
                             </Box>
                         </Grid>
@@ -110,7 +112,10 @@ export default function Home() {
                             <Typography
                                 variant="body2"
                                 className="sticky"
-                                sx={{ maxWidth: "35ch" }}
+                                sx={{
+                                    maxWidth: "35ch",
+                                    padding: { xs: "0", md: "4rem 0 0 3rem" },
+                                }}
                             >
                                 with more than{" "}
                                 <HighlightedText>
@@ -135,37 +140,7 @@ export default function Home() {
                 </Box>
             </Container>
             <Container maxWidth="xl" disableGutters>
-                <Box
-                    className="section"
-                    id="portfolio"
-                    sx={{ backgroundColor: theme.palette.primary.main }}
-                >
-                    <Container>
-                        {/* <Line /> */}
-                        <Typography
-                            variant="h2"
-                            sx={{
-                                color: theme.palette.background.default,
-                                textAlign: "end",
-                                marginBottom: ".5em",
-                            }}
-                        >
-                            OUR WORK
-                        </Typography>
-                        <Grid container columnSpacing={6} rowSpacing={2}>
-                            {portfolioProjects.map((project, index) => {
-                                return (
-                                    <Grid item key={index} xs={12}>
-                                        <PortfolioProject
-                                            project={project}
-                                            index={index}
-                                        />
-                                    </Grid>
-                                );
-                            })}
-                        </Grid>
-                    </Container>
-                </Box>
+                <TextMarquee />
             </Container>
             <Box id="contact">
                 <ContactPanel />

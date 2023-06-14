@@ -111,14 +111,14 @@ theme = createTheme(theme, {
         body1: {
             fontFamily: theme.font.body,
             color: theme.palette.custom.dark,
-            fontSize: "1.35rem",
+            fontSize: "1.15rem",
             lineHeight: "1.25em",
         },
         body2: {
             fontFamily: theme.font.body,
 
             color: theme.palette.primary.main,
-            fontSize: "1.25rem",
+            fontSize: "1.15rem",
             lineHeight: "1.25em",
         },
         caption: {

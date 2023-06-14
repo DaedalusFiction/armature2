@@ -6,7 +6,13 @@ const text = "FRAME // WORK //*";
 
 const TextMarquee = () => {
     return (
-        <Box sx={{ overflow: "hidden", marginTop: "2rem" }}>
+        <Box
+            sx={{
+                overflow: "hidden",
+                background: theme.palette.custom.dark,
+                padding: "1rem 0",
+            }}
+        >
             <Box
                 sx={{
                     display: "flex",
@@ -14,8 +20,10 @@ const TextMarquee = () => {
                     gap: "1rem",
 
                     justifyContent: "space-between",
-                    animation: "marquee 20s linear infinite",
-                    // animationDelay: "2s",
+                    animation: "marquee 30s linear infinite",
+                    "&:hover": {
+                        animationPlayState: "paused",
+                    },
                     "@keyframes marquee": {
                         "0%": {
                             transform: "translateX(0%)",
@@ -27,7 +35,7 @@ const TextMarquee = () => {
                 }}
             >
                 {text
-                    .repeat(4)
+                    .repeat(8)
                     .split("*")
                     .map((item, index) => {
                         return (
@@ -36,7 +44,7 @@ const TextMarquee = () => {
                                 key={index}
                                 sx={{
                                     whiteSpace: "nowrap",
-                                    color: theme.palette.custom.dark,
+                                    color: theme.palette.background.default,
                                 }}
                             >
                                 {item}

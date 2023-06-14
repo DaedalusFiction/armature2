@@ -270,7 +270,7 @@ a {
 }
 
 .screencap {
-    max-height: 25rem;
+    max-height: 20rem;
     overflow: hidden;
 }
 .screencap img {
