@@ -21,7 +21,7 @@ const PortfolioSection = () => {
                     scrub: true,
                     pin: true,
                     start: "top top",
-                    end: "+=100%",
+                    end: "+=250%",
                 },
                 x: "-=120%",
                 transformOrigin: "left center",
