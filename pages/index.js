@@ -11,6 +11,7 @@ import ImageWithFade from "../components/general/ImageWithFade";
 import Header from "../components/layout/Header";
 import ShrinkingImage from "../components/animations/ShrinkingImage";
 import Line from "../components/animations/Line";
+import TextMarquee from "../components/animations/TextMarquee";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
@@ -49,6 +50,7 @@ export default function Home() {
             <Meta />
             <Header />
             <Hero />
+            <TextMarquee />
             <Container maxWidth="xl">
                 <Box className="section" id="about">
                     <Grid container spacing={6}>
@@ -90,8 +92,8 @@ export default function Home() {
                                     maxSize={800}
                                     filter={theme.palette.primary.overlay}
                                 /> */}
-                                {/* <ShrinkingImage /> */}
-                                <Line color="black" />
+                                <ShrinkingImage />
+                                {/* <Line color="black" /> */}
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={5}>

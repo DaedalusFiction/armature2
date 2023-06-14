@@ -1,60 +1,81 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import ImageWithFade from "../general/ImageWithFade";
 import theme from "../../styles/themes/theme";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { Box } from "@mui/material";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
 
 const ShrinkingImage = () => {
+    gsap.registerPlugin(ScrollTrigger);
     const comp = useRef(); // create a ref for the root level element (for scoping)
-    const circleRef = useRef(null);
-
-    useEffect(() => {
-        gsap.fromTo(
-            "#thirdCircle",
-            { x: 0 },
-            {
-                x: 100,
-                duration: 5,
-                scrollTrigger: {
-                    trigger: "#thirdCircle",
-                    markers: true,
-                    start: "top center",
-                    end: "bottom 80px",
-                    scrub: true,
-                },
-            }
-        );
-    }, []);
+    const imageRef = useRef(null);
 
     // useLayoutEffect(() => {
-    //     // gsap.registerPlugin(ScrollTrigger);
-    //     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
-    //     let ctx = gsap.context(() => {
-    //         // gsap.to(imageWrapper.current, { rotation: 180 });
-    //         gsap.to("#thirdCircle", {
-    //             x: 100,
-    //             duration: 5,
-    //             scrollTrigger: {
-    //                 trigger: "#thirdCircle",
-    //                 markers: true,
-    //                 start: "top center",
-    //                 end: "bottom 80px",
-    //                 scrub: true,
-    //             },
-    //         });
-    //     }, comp); // <- IMPORTANT! Scopes selector text
+    //     const element = imageRef.current;
 
-    //     return () => ctx.revert(); // cleanup
-    // }, []); // <- empty dependency Array so it doesn't re-run on every render
+    //     gsap.fromTo(
+    //         element,
+    //         { width: "15rem" },
+    //         {
+    //             width: "10rem",
+
+    //             scrollTrigger: {
+    //                 trigger: element,
+    //                 scrub: true,
+    //                 start: "top 40%",
+    //                 end: "bottom 60%",
+    //                 markers: true,
+    //             },
+    //         }
+    //     );
+    // }, []);
+
+    useLayoutEffect(() => {
+        const element = imageRef.current;
+        const ctx = gsap.context(() => {
+            const animation1 = gsap.from(element, {
+                scrollTrigger: {
+                    trigger: ".orange",
+                    scrub: true,
+                    pin: true,
+                    start: "top top",
+                    end: "+=100%",
+                },
+                scaleX: 0,
+                transformOrigin: "left center",
+                ease: "none",
+            });
+            // const animation1 = gsap.fromTo(
+            //     element,
+            //     { width: "15rem" },
+            //     {
+            //         width: "10rem",
+
+            //         scrollTrigger: {
+            //             trigger: element,
+            //             scrub: true,
+            //             pin: true,
+            //             start: "top 40%",
+            //             end: "bottom 60%",
+            //             markers: true,
+            //         },
+            //     }
+            // );
+        }, element);
+
+        // cleanup function will be called when component is removed
+        return () => {
+            ctx.revert(); // animation cleanup!!
+        };
+    }, []);
     return (
-        <Box>
-            <div ref={circleRef} id="thirdCircle"></div>
-            {/* <ImageWithFade
+        <Box ref={imageRef}>
+            <ImageWithFade
                 src="/images/profile-river5.jpg"
                 alt="Dave Sorensen sitting on a rock"
                 maxSize={800}
                 filter={theme.palette.primary.overlay}
-            /> */}
+            />
         </Box>
     );
 };

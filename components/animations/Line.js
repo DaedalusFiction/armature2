@@ -8,20 +8,31 @@ const Line = ({ color, reversed }) => {
     const lineRef = useRef(null);
     useLayoutEffect(() => {
         const element = lineRef.current;
-        gsap.fromTo(
-            element,
-            { transform: "scaleX(0)" },
-            {
-                transform: "scaleX(1)",
-                duration: 1,
-                scrollTrigger: {
-                    trigger: element,
-                    scrub: 1,
-                    start: "top 92%",
-                    end: "top 60%",
-                },
-            }
-        );
+        gsap.from(element, {
+            scrollTrigger: {
+                trigger: ".line-1",
+                scrub: true,
+                start: "top bottom",
+                end: "top top",
+            },
+            scaleX: 0,
+            transformOrigin: "left center",
+            ease: "none",
+        });
+        // gsap.fromTo(
+        //     element,
+        //     { scaleX: 0 },
+        //     {
+        //         scaleX: 1,
+        //         duration: 1,
+        //         scrollTrigger: {
+        //             trigger: element,
+        //             scrub: 1,
+        //             start: "top 92%",
+        //             end: "top 60%",
+        //         },
+        //     }
+        // );
     }, []);
     return (
         <Box
