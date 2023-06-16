@@ -80,7 +80,7 @@ theme = createTheme(theme, {
         h3: {
             color: theme.palette.custom.dark,
             fontFamily: theme.font.title,
-            fontSize: "2.5rem",
+            fontSize: "2.75rem",
         },
         h4: {
             color: theme.palette.custom.dark,

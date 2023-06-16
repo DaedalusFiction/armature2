@@ -13,6 +13,7 @@ import Line from "../components/animations/Line";
 import TextMarquee from "../components/animations/TextMarquee";
 import ImageFadingIn from "../components/animations/ImageFadingIn";
 import PortfolioSection from "../components/home/PortfolioSection";
+import ServicesSection from "../components/home/ServicesSection";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
@@ -66,6 +67,21 @@ export default function Home() {
                                 <Typography
                                     variant="body2"
                                     className="sticky"
+                                    sx={{
+                                        fontSize: "1.75rem",
+
+                                        maxWidth: "45ch",
+                                    }}
+                                >
+                                    ARMATURE is a narrative-driven digital
+                                    marketing agency for the arts. Our passion
+                                    for quality content and clean design forms
+                                    the core structure of your brand&rsquo;s
+                                    growth.
+                                </Typography>
+                                {/* <Typography
+                                    variant="body2"
+                                    className="sticky"
                                     sx={{ maxWidth: "45ch" }}
                                 >
                                     we are a narrative-driven{" "}
@@ -88,7 +104,7 @@ export default function Home() {
                                     </HighlightedText>{" "}
                                     to help you establish your voice as one of
                                     authority and insight.
-                                </Typography>
+                                </Typography> */}
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={5}>
@@ -114,6 +130,20 @@ export default function Home() {
                                 className="sticky"
                                 sx={{
                                     maxWidth: "35ch",
+                                    fontSize: "1.75rem",
+                                    padding: { xs: "0", md: "4rem 0 0 3rem" },
+                                }}
+                            >
+                                With more than a decade of experience creating
+                                content for the arts and culture field, we know
+                                what gets people talking and coming back for
+                                more.
+                            </Typography>
+                            {/* <Typography
+                                variant="body2"
+                                className="sticky"
+                                sx={{
+                                    maxWidth: "35ch",
                                     padding: { xs: "0", md: "4rem 0 0 3rem" },
                                 }}
                             >
@@ -134,11 +164,12 @@ export default function Home() {
                                     you can feel proud
                                 </HighlightedText>{" "}
                                 sharing it with the world.
-                            </Typography>
+                            </Typography> */}
                         </Grid>
                     </Grid>
                 </Box>
             </Container>
+            <ServicesSection />
             <Container maxWidth="xl" disableGutters>
                 <TextMarquee />
             </Container>
