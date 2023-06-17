@@ -32,24 +32,13 @@ const Hero = () => {
             >
                 <Box
                     sx={{
-                        position: "absolute",
-                        backgroundColor: theme.palette.primary.overlay,
-                        top: "0",
-                        left: "0",
-                        height: "100%",
-                        width: "100%",
-                        zIndex: "5",
-                    }}
-                />
-                <Box
-                    sx={{
                         marginLeft: "3rem",
                         display: "flex",
                         justifyContent: "end",
                         gap: { xs: "1.5rem", md: "2.5rem" },
                         marginBottom: { xs: "20vh", md: "15vh" },
                         marginRight: { xs: "15vw", md: "25vw" },
-                        zIndex: "10",
+                        // zIndex: "10",
                     }}
                 >
                     <Sitemap />

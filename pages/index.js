@@ -15,42 +15,14 @@ import ImageFadingIn from "../components/animations/ImageFadingIn";
 import PortfolioSection from "../components/home/PortfolioSection";
 import ServicesSection from "../components/home/ServicesSection";
 import CutCorners from "../components/general/CutCorners";
-
-const HighlightedText = ({ children }) => {
-    return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
-};
-
-const portfolioProjects = [
-    {
-        name: "Flavor Exceptional Catering",
-        src: "/images/flavorScreencap.webp",
-        description:
-            "Flavor Exceptional Catering works closely with the UVA sports departments as well as a dozen or so sororities and fraternities, and they came to us looking for a website that would show visitors their commitment to their craft. We opted for a simple, elegant design, one that highlighted the beauty of their presentation and the friendliness of their characters.",
-        created: "2023",
-        href: "https://flavorcville.com",
-    },
-    {
-        name: "The Rumen",
-        src: "/images/rumenScreencap.webp",
-        description:
-            "The Rumen is an online literary journal that publishes poetry, short fiction, and creative non-fiction. For their website we favored a more traditional design inspired by Harper's and The New Yorker. Publications are stored on Firebase and are managed through a custom admin panel, powered by OAuth 2.0, directly in the browser.",
-        created: "2022",
-        href: "https://therumen.com",
-    },
-    {
-        name: "Nettle Shirts Puppet Works",
-        src: "/images/nettleScreencap.webp",
-        description:
-            "Nettle Shirts Puppet Works wanted a website that was as minimalist as they get: One font family (Times New Roman), two colors (brown and black), and zero animations. We built for them a website that captures the simplicity of their work and the austerity of their brand, and focuses the user's attention on the content itself.",
-        created: "2023",
-        href: "https://nettleshirts.net",
-    },
-];
+import MouseLines from "../components/mouse/MouseLines";
+import DotRing from "../components/mouse/DotRing";
 
 export default function Home() {
     return (
-        <Box sx={{ position: "relative" }}>
+        <Box sx={{ position: "relative", cursor: "none" }}>
             <Meta />
+            <DotRing />
             <Header />
             <Hero />
 

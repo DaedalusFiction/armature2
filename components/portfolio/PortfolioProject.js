@@ -66,19 +66,6 @@ const PortfolioProject = ({ project, index }) => {
                                 maxSize={600}
                                 alt="rumen screencap"
                             />
-
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    backgroundColor:
-                                        theme.palette.primary.overlay,
-                                    top: "0",
-                                    left: "0",
-                                    height: "100%",
-                                    width: "100%",
-                                    zIndex: "5",
-                                }}
-                            />
                         </Box>
                         <Box
                             sx={{
