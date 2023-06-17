@@ -160,6 +160,22 @@ theme = createTheme(theme, {
                 },
             },
         },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    // fontFamily: theme.typography.theme.accent,
+                    padding: "0",
+                },
+            },
+        },
+        MuiList: {
+            styleOverrides: {
+                root: {
+                    // fontFamily: theme.typography.theme.accent,
+                    padding: "0",
+                },
+            },
+        },
     },
 });
 

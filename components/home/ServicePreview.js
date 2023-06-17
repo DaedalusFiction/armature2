@@ -44,51 +44,59 @@ const ServicePreview = ({ service, reversed }) => {
             <Box>
                 <Grid container direction={reversed ? "row-reverse" : "row"}>
                     <Grid item xs={12} md={6}>
-                        <Box
-                            sx={{
-                                height: "100%",
-                                display: "flex",
-                                alignItems: "center",
-                                padding: { xs: "1rem", md: "3rem" },
-                            }}
+                        <Grid
+                            container
+                            columnSpacing={4}
+                            sx={{ height: "100%", padding: "4rem 2rem" }}
                         >
-                            <Box>
-                                <Typography>{service.flavor}</Typography>
-                                <Typography
-                                    variant="h3"
+                            <Grid item xs={6}>
+                                <Box
                                     sx={{
-                                        color: theme.palette.background.default,
-                                        marginBottom: ".25em",
-                                        textTransform: "uppercase",
+                                        height: "100%",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        justifyContent: "space-between",
                                     }}
                                 >
-                                    {service.header}
-                                </Typography>
-                                <Typography
+                                    <Typography>{service.flavor}</Typography>
+                                    <Typography
+                                        variant="h3"
+                                        sx={{
+                                            color: theme.palette.background
+                                                .default,
+                                            textTransform: "uppercase",
+                                        }}
+                                    >
+                                        {service.header}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Box
                                     sx={{
-                                        color: theme.palette.custom.dark,
-                                        fontStyle: "italic",
+                                        display: "flex",
+                                        height: "100%",
+                                        alignItems: "end",
                                     }}
                                 >
-                                    {service.description}
-                                </Typography>
-                                <List>
-                                    {service.points.map((point, index) => {
-                                        return (
-                                            <ListItem key={index}>
-                                                <ListItemText
-                                                    primary={point}
-                                                    secondary={
-                                                        service.secondaryPoint ||
-                                                        ""
-                                                    }
-                                                />
-                                            </ListItem>
-                                        );
-                                    })}
-                                </List>
-                            </Box>
-                        </Box>
+                                    <List>
+                                        {service.points.map((point, index) => {
+                                            return (
+                                                <ListItem key={index}>
+                                                    <ListItemText
+                                                        primary={point}
+                                                        secondary={
+                                                            service.secondaryPoint ||
+                                                            ""
+                                                        }
+                                                    />
+                                                </ListItem>
+                                            );
+                                        })}
+                                    </List>
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box

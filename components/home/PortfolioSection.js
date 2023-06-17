@@ -40,7 +40,7 @@ const PortfolioSection = () => {
                 sx={{
                     overflow: "hidden",
                     height: "100vh",
-                    display: { xs: "none", md: "block" },
+                    display: { xs: "none", sm: "block" },
                 }}
             >
                 <Typography
@@ -82,7 +82,7 @@ const PortfolioSection = () => {
                 className="section"
                 sx={{
                     backgroundColor: theme.palette.primary.main,
-                    display: { xs: "block", md: "none" },
+                    display: { xs: "block", sm: "none" },
                 }}
             >
                 <Typography

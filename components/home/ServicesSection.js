@@ -40,15 +40,17 @@ const services = [
 const ServicesSection = () => {
     return (
         <Box sx={{ background: theme.palette.primary.main }}>
-            {services.map((service, index) => {
-                return (
-                    <ServicePreview
-                        key={index}
-                        service={service}
-                        reversed={index % 2 === 0}
-                    />
-                );
-            })}
+            <Container maxWidth="xl" disableGutters>
+                {services.map((service, index) => {
+                    return (
+                        <ServicePreview
+                            key={index}
+                            service={service}
+                            reversed={index % 2 === 0}
+                        />
+                    );
+                })}
+            </Container>
         </Box>
     );
 };

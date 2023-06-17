@@ -14,6 +14,7 @@ import TextMarquee from "../components/animations/TextMarquee";
 import ImageFadingIn from "../components/animations/ImageFadingIn";
 import PortfolioSection from "../components/home/PortfolioSection";
 import ServicesSection from "../components/home/ServicesSection";
+import CutCorners from "../components/general/CutCorners";
 
 const HighlightedText = ({ children }) => {
     return <span style={{ color: theme.palette.custom.dark }}>{children}</span>;
@@ -69,8 +70,11 @@ export default function Home() {
                                     className="sticky"
                                     sx={{
                                         fontSize: "1.75rem",
-
                                         maxWidth: "45ch",
+                                        padding: {
+                                            xs: "0",
+                                            md: "6.5rem 0 6.5rem 3rem",
+                                        },
                                     }}
                                 >
                                     ARMATURE is a narrative-driven digital
@@ -108,21 +112,25 @@ export default function Home() {
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={5}>
-                            <Box>
+                            <CutCorners
+                                background={theme.palette.background.default}
+                            >
                                 <ImageFadingIn
                                     src="/images/jonathan.webp"
                                     alt="Jonathan Clark on a farm"
                                 />
-                            </Box>
+                            </CutCorners>
                         </Grid>
 
                         <Grid item xs={12} md={5}>
-                            <Box>
+                            <CutCorners
+                                background={theme.palette.background.default}
+                            >
                                 <ImageFadingIn
                                     src="/images/profile-river5.jpg"
                                     alt="Dave sitting on a rock in a river"
                                 />
-                            </Box>
+                            </CutCorners>
                         </Grid>
                         <Grid item xs={12} md={7}>
                             <Typography
@@ -131,7 +139,10 @@ export default function Home() {
                                 sx={{
                                     maxWidth: "35ch",
                                     fontSize: "1.75rem",
-                                    padding: { xs: "0", md: "4rem 0 0 3rem" },
+                                    padding: {
+                                        xs: "0",
+                                        md: "6.5rem 0 6.5rem 3rem",
+                                    },
                                 }}
                             >
                                 With more than a decade of experience creating
@@ -144,7 +155,7 @@ export default function Home() {
                                 className="sticky"
                                 sx={{
                                     maxWidth: "35ch",
-                                    padding: { xs: "0", md: "4rem 0 0 3rem" },
+                                    padding: { xs: "0", md: "6.5rem 0 0 3rem" },
                                 }}
                             >
                                 with more than{" "}
