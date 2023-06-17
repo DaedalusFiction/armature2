@@ -9,33 +9,41 @@ const lines = [
 
 const MouseLines = ({ x, y }) => {
     const [rotation, setRotation] = useState(0);
+    useEffect(() => {
+        setRotation(1);
+    }, []);
     return (
         <>
             {lines.map((line, index) => {
-                return (
-                    <div
-                        key={index}
-                        style={{
-                            content: "''",
-                            height: "4px",
-                            width: "1500px",
-                            left: `${x}px`,
-                            top: `${y}px`,
+                if (typeof window !== "undefined") {
+                    return (
+                        <div
+                            key={index}
+                            style={{
+                                content: "''",
+                                height: "4px",
+                                width: "1500px",
+                                left: `${x}px`,
+                                top: `${y}px`,
 
-                            transform: `translateX(-3px) rotate(clamp(-160deg, ${
-                                (line.rotation * ((x + y) / 2)) /
-                                window.innerHeight
-                            }deg, -25deg ))`,
-                            transformOrigin: "0 0",
-                            position: "fixed",
-                            // transformOrigin: line.origin,
-                            backgroundColor: theme.palette.background.default,
-                            // backgroundColor:
-                            //     theme.palette.background.default,
-                            zIndex: "99",
-                        }}
-                    />
-                );
+                                transform: `translateX(-3px) rotate(clamp(-160deg, ${
+                                    (line.rotation * ((x + y) / 2)) /
+                                    window.innerHeight
+                                }deg, -25deg ))`,
+                                transformOrigin: "0 0",
+                                position: "fixed",
+                                // transformOrigin: line.origin,
+                                backgroundColor:
+                                    theme.palette.background.default,
+                                // backgroundColor:
+                                //     theme.palette.background.default,
+                                zIndex: "99",
+                            }}
+                        />
+                    );
+                } else {
+                    return <div></div>;
+                }
             })}
         </>
     );

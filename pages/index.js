@@ -20,19 +20,13 @@ import DotRing from "../components/mouse/DotRing";
 
 export default function Home() {
     return (
-        <Box sx={{ position: "relative", cursor: "none" }}>
+        <Box className="cursor-hidden" sx={{ position: "relative" }}>
             <Meta />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <DotRing />
             </Box>
             <Header />
             <Hero />
-
-            <Box sx={{ backgroundColor: theme.palette.primary.main }}>
-                <Container maxWidth="xl">
-                    <PortfolioSection />
-                </Container>
-            </Box>
 
             <Container maxWidth="xl">
                 <Box className="section" id="about">
@@ -158,6 +152,11 @@ export default function Home() {
             <Container maxWidth="xl" disableGutters>
                 <TextMarquee />
             </Container>
+            <Box sx={{ backgroundColor: theme.palette.primary.main }}>
+                <Container maxWidth="xl">
+                    <PortfolioSection />
+                </Container>
+            </Box>
             <Box id="contact">
                 <ContactPanel />
             </Box>
