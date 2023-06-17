@@ -22,7 +22,9 @@ export default function Home() {
     return (
         <Box sx={{ position: "relative", cursor: "none" }}>
             <Meta />
-            <DotRing />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                <DotRing />
+            </Box>
             <Header />
             <Hero />
 
