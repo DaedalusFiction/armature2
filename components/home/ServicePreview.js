@@ -101,7 +101,10 @@ const ServicePreview = ({ service, reversed }) => {
                     <Grid item xs={12} md={6}>
                         <Box
                             ref={imageContainerRef}
-                            sx={{ height: "75vh", overflow: "hidden" }}
+                            sx={{
+                                height: "clamp(20rem, 75vh, 35rem)",
+                                overflow: "hidden",
+                            }}
                         >
                             <Box ref={imageRef}>
                                 <ImageWithFade

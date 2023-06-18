@@ -2,48 +2,53 @@ import React, { useEffect, useState } from "react";
 import theme from "../../styles/themes/theme";
 
 const lines = [
-    { top: "20%", left: "6%", origin: "left", rotation: -85 },
-    { top: "20%", left: "22%", origin: "left", rotation: -40 },
-    { top: "20%", left: "41%", origin: "left", rotation: -190 },
+    { top: "20%", left: "6%", origin: "left", rotation: -35 },
+    { top: "20%", left: "22%", origin: "left", rotation: 0 },
+    { top: "20%", left: "41%", origin: "left", rotation: -180 },
 ];
 
 const MouseLines = ({ x, y }) => {
-    const [rotation, setRotation] = useState(0);
+    const [rotation, setRotation] = useState(1);
+    const [windowWidth, setWindowWidth] = useState(1);
+    const [windowHeight, setWindowHeight] = useState(1);
     useEffect(() => {
-        setRotation(1);
+        setWindowWidth(window.innerWidth);
+        setWindowHeight(window.innerHeight);
     }, []);
     return (
         <>
             {lines.map((line, index) => {
-                if (typeof window !== "undefined") {
-                    return (
-                        <div
-                            key={index}
-                            style={{
-                                content: "''",
-                                height: "4px",
-                                width: "1500px",
-                                left: `${x}px`,
-                                top: `${y}px`,
+                const rotation = 7;
+                return (
+                    <div
+                        key={index}
+                        style={{
+                            content: "''",
+                            height: "4px",
+                            width: "1500px",
+                            left: `${x - 4}px`,
+                            top: `${y + 2}px`,
 
-                                transform: `translateX(-3px) rotate(clamp(-160deg, ${
-                                    (line.rotation * ((x + y) / 2)) /
-                                    window.innerHeight
-                                }deg, -25deg ))`,
-                                transformOrigin: "0 0",
-                                position: "fixed",
-                                // transformOrigin: line.origin,
-                                backgroundColor:
-                                    theme.palette.background.default,
-                                // backgroundColor:
-                                //     theme.palette.background.default,
-                                zIndex: "99",
-                            }}
-                        />
-                    );
-                } else {
-                    return <div></div>;
-                }
+                            transform:
+                                line.rotation < -90
+                                    ? `rotate(${
+                                          line.rotation +
+                                          (y / windowHeight) * 50
+                                      }deg)`
+                                    : `rotate(${
+                                          line.rotation -
+                                          (y / windowHeight) * 50
+                                      }deg)`,
+                            transformOrigin: "0 0",
+                            position: "fixed",
+                            // transformOrigin: line.origin,
+                            backgroundColor: theme.palette.background.default,
+                            // backgroundColor:
+                            //     theme.palette.background.default,
+                            zIndex: "99",
+                        }}
+                    />
+                );
             })}
         </>
     );

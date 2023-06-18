@@ -149,9 +149,9 @@ export default function Home() {
                 </Box>
             </Container>
             <ServicesSection />
-            <Container maxWidth="xl" disableGutters>
-                <TextMarquee />
-            </Container>
+
+            <TextMarquee />
+
             <Box sx={{ backgroundColor: theme.palette.primary.main }}>
                 <Container maxWidth="xl">
                     <PortfolioSection />
