@@ -12,6 +12,7 @@ const DotRing = () => {
                 style={{
                     left: `${x}px`,
                     top: `${y}px`,
+                    transition: "100ms",
                     border: "10px solid " + theme.palette.background.default,
                 }}
                 className={"ring"}

@@ -58,13 +58,20 @@ const ServicePreview = ({ service, reversed }) => {
                                         justifyContent: "space-between",
                                     }}
                                 >
-                                    <Typography>{service.flavor}</Typography>
+                                    <Typography
+                                        sx={{
+                                            // textTransform: "uppercase",
+                                            fontSize: "1.25rem",
+                                        }}
+                                    >
+                                        {service.flavor}
+                                    </Typography>
                                     <Typography
                                         variant="h3"
                                         sx={{
                                             color: theme.palette.background
                                                 .default,
-                                            textTransform: "uppercase",
+                                            // textTransform: "uppercase",
                                         }}
                                     >
                                         {service.header}
@@ -85,6 +92,9 @@ const ServicePreview = ({ service, reversed }) => {
                                                 <ListItem key={index}>
                                                     <ListItemText
                                                         primary={point}
+                                                        primaryTypographyProps={{
+                                                            fontSize: "1.25rem",
+                                                        }}
                                                         secondary={
                                                             service.secondaryPoint ||
                                                             ""

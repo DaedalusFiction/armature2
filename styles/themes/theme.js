@@ -168,6 +168,7 @@ theme = createTheme(theme, {
                 },
             },
         },
+
         MuiList: {
             styleOverrides: {
                 root: {

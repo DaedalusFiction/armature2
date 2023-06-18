@@ -152,11 +152,11 @@ export default function Home() {
 
             <TextMarquee />
 
-            <Box sx={{ backgroundColor: theme.palette.primary.main }}>
+            {/* <Box sx={{ backgroundColor: theme.palette.primary.main }}>
                 <Container maxWidth="xl">
                     <PortfolioSection />
                 </Container>
-            </Box>
+            </Box> */}
             <Box id="contact">
                 <ContactPanel />
             </Box>

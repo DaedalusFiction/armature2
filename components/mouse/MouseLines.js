@@ -26,6 +26,7 @@ const MouseLines = ({ x, y }) => {
                             content: "''",
                             height: "4px",
                             width: "1500px",
+                            transition: "100ms",
                             left: `${x - 4}px`,
                             top: `${y + 2}px`,
 
