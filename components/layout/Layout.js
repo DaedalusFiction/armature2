@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
     return (
-        <Box sx={{ position: "relative", zIndex: "0" }}>
+        <Box>
             <Meta />
             {/* <Navbar /> */}
             {/* <Header /> */}

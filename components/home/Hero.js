@@ -38,7 +38,7 @@ const Hero = () => {
                         gap: { xs: "1.5rem", md: "2.5rem" },
                         marginBottom: { xs: "20vh", md: "15vh" },
                         marginRight: { xs: "15vw", md: "25vw" },
-                        // zIndex: "10",
+                        zIndex: "2",
                     }}
                 >
                     <Sitemap />

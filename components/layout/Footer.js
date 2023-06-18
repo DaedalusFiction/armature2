@@ -1,11 +1,16 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import theme from "../../styles/themes/theme";
 import Sitemap from "../general/Sitemap";
 
 const Footer = () => {
     return (
-        <Box sx={{ background: theme.palette.primary.main, padding: "2rem 0" }}>
+        <Box
+            sx={{
+                background: theme.palette.primary.main,
+                padding: "2rem 0",
+            }}
+        >
             <Container maxWidth="xl">
                 <Grid container>
                     <Grid item xs={12} md={4}>

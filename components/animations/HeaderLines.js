@@ -13,8 +13,9 @@ const lines = [
 
 const HeaderLines = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
+
     const handleScroll = () => {
-        const position = window.pageYOffset;
+        const position = window.scrollY;
         setScrollPosition(position);
         // console.log(position);
     };
@@ -51,7 +52,7 @@ const HeaderLines = () => {
                                 transformOrigin: line.origin,
                                 backgroundColor:
                                     theme.palette.background.default,
-                                zIndex: "999",
+                                zIndex: "2",
                                 "@keyframes grow": {
                                     "0%": {
                                         scale: "0",

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import Hero from "../components/home/Hero";
@@ -20,7 +20,7 @@ import DotRing from "../components/mouse/DotRing";
 
 export default function Home() {
     return (
-        <Box className="cursor-hidden" sx={{ position: "relative" }}>
+        <Box className="cursor-hidden">
             <Meta />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <DotRing />
@@ -149,7 +149,6 @@ export default function Home() {
                 </Box>
             </Container>
             <ServicesSection />
-
             <TextMarquee />
 
             {/* <Box sx={{ backgroundColor: theme.palette.primary.main }}>

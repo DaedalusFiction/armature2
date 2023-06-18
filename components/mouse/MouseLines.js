@@ -7,12 +7,10 @@ const lines = [
     { top: "20%", left: "41%", origin: "left", rotation: -180 },
 ];
 
-const MouseLines = ({ x, y }) => {
-    const [rotation, setRotation] = useState(1);
-    const [windowWidth, setWindowWidth] = useState(1);
+const MouseLines = ({ x, y, colors }) => {
     const [windowHeight, setWindowHeight] = useState(1);
+
     useEffect(() => {
-        setWindowWidth(window.innerWidth);
         setWindowHeight(window.innerHeight);
     }, []);
     return (
@@ -26,7 +24,7 @@ const MouseLines = ({ x, y }) => {
                             content: "''",
                             height: "4px",
                             width: "1500px",
-                            transition: "100ms",
+                            // transition: "100ms",
                             left: `${x - 4}px`,
                             top: `${y + 2}px`,
 
@@ -43,10 +41,11 @@ const MouseLines = ({ x, y }) => {
                             transformOrigin: "0 0",
                             position: "fixed",
                             // transformOrigin: line.origin,
-                            backgroundColor: theme.palette.background.default,
+                            backgroundColor: colors.lines,
+                            transition: "background-color 300ms",
                             // backgroundColor:
                             //     theme.palette.background.default,
-                            zIndex: "99",
+                            zIndex: "1",
                         }}
                     />
                 );

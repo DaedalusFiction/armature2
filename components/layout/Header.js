@@ -30,7 +30,7 @@ const Header = () => {
                 position: "fixed",
                 top: "0",
                 left: "0",
-                zIndex: "100",
+                zIndex: "3",
                 width: "100%",
                 padding: ".75rem 0",
                 transition: "1000ms",

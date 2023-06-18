@@ -48,6 +48,8 @@ const ContactForm = ({ config }) => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "1em",
+                position: "relative",
+                zIndex: "2",
             }}
         >
             {!isSubmitted ? (

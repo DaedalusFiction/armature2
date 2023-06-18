@@ -1,8 +1,6 @@
-import { Box, Container, Divider, Grid, Typography } from "@mui/material";
-import TextHighlight from "../general/TextHighlight";
+import { Container, Grid, Typography } from "@mui/material";
 import { contactConfig } from "../../siteInfo";
 import ContactForm from "./ContactForm";
-import theme from "../../styles/themes/theme";
 
 const ContactPanel = () => {
     return (
