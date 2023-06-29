@@ -51,6 +51,9 @@ const Post = ({ post, sidebarItems, sidebarCategory }) => {
                             src={post.URLs[0]}
                             alt="Jorge Luis Borges sitting at his desk"
                         />
+                        <Typography variant="caption">
+                            {post.fields[3].value}
+                        </Typography>
                         <PostBody
                             sidebarCategory={sidebarCategory}
                             sidebarItems={sidebarItems}
