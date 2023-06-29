@@ -18,6 +18,7 @@ const Post = ({ post, sidebarItems, sidebarCategory }) => {
                             margin: ".25em 0",
                             textAlign: "center",
                             color: theme.palette.custom.dark,
+                            fontSize: "clamp(3rem, 8vw, 6rem)",
                         }}
                         variant="h1"
                     >

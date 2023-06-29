@@ -34,15 +34,14 @@ const DotRing = () => {
     }, []);
     return (
         <>
-            <MouseLines x={x} y={y} colors={colors} />
+            {/* <MouseLines x={x} y={y} colors={colors} /> */}
             <div
+                className={"ring"}
                 style={{
                     left: `${x}px`,
                     top: `${y}px`,
-                    transition: "border 300ms",
-                    border: "10px solid " + colors.lines,
+                    // border: "10px solid " + colors.lines,
                 }}
-                className={"ring"}
             >
                 {/* position of y is {y / window.innerHeight} */}
             </div>

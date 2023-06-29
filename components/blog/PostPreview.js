@@ -19,7 +19,7 @@ const PostPreview = ({ post, id, category }) => {
             {post.URLs && (
                 <Link href={postHref}>
                     <Fade in={isLoaded}>
-                        <div>
+                        <div style={{ filter: "grayscale(100)" }}>
                             <Image
                                 className="link link-image"
                                 src={post.URLs[0]}

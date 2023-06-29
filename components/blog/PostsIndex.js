@@ -6,7 +6,7 @@ import PageLayout from "../layout/PageLayout";
 const PostsIndex = ({ category, posts, isGrid }) => {
     return (
         <Container maxWidth={isGrid ? "lg" : "md"}>
-            <Grid container>
+            <Grid container spacing={4}>
                 {posts.map((post, index) => {
                     return (
                         <Grid key={index} item xs={12} md={isGrid ? 4 : 12}>

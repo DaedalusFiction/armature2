@@ -4,15 +4,15 @@ import PostsIndex from "../../components/blog/PostsIndex";
 import { db } from "../../firebase";
 import PageLayout from "../../components/layout/PageLayout";
 import { Container, Typography } from "@mui/material";
-// import PublicationIndex from "../../../components/layout/PublicationIndex";
 
 const category = "Design";
 
 const index = ({ posts }) => {
     return (
         <PageLayout name="Blog">
+            {/* <DotRing /> */}
             <Container>
-                <Typography variant="h5">Design:</Typography>
+                <Typography variant="h5">Latest Posts:</Typography>
                 <br />
                 <PostsIndex category={category} posts={posts} isGrid />
             </Container>
