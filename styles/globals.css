@@ -21,6 +21,18 @@ a {
     text-decoration: none;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-middle {
+    align-items: center;
+}
+
 :root {
     --bg-success: #e6e6e6;
     --bg-sucess: rgb(255, 252, 235);

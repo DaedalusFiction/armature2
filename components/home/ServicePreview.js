@@ -49,7 +49,7 @@ const ServicePreview = ({ service, reversed }) => {
                             columnSpacing={4}
                             sx={{ height: "100%", padding: "4rem 2rem" }}
                         >
-                            <Grid item xs={6}>
+                            <Grid item xs={12} md={6}>
                                 <Box
                                     sx={{
                                         height: "100%",
@@ -60,8 +60,10 @@ const ServicePreview = ({ service, reversed }) => {
                                 >
                                     <Typography
                                         sx={{
-                                            // textTransform: "uppercase",
-                                            fontSize: "1.25rem",
+                                            textTransform: "uppercase",
+                                            fontSize: "1.5rem",
+                                            letterSpacing: ".2em",
+                                            color: theme.palette.custom.light,
                                         }}
                                     >
                                         {service.flavor}
@@ -71,6 +73,7 @@ const ServicePreview = ({ service, reversed }) => {
                                         sx={{
                                             color: theme.palette.background
                                                 .default,
+                                            marginTop: ".5rem",
                                             // textTransform: "uppercase",
                                         }}
                                     >
@@ -78,7 +81,7 @@ const ServicePreview = ({ service, reversed }) => {
                                     </Typography>
                                 </Box>
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} md={6}>
                                 <Box
                                     sx={{
                                         display: "flex",
@@ -86,7 +89,7 @@ const ServicePreview = ({ service, reversed }) => {
                                         alignItems: "end",
                                     }}
                                 >
-                                    <List>
+                                    <List sx={{ marginTop: "1rem" }}>
                                         {service.points.map((point, index) => {
                                             return (
                                                 <ListItem key={index}>
