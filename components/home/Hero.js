@@ -1,14 +1,5 @@
-import { ArrowRightAlt } from "@mui/icons-material";
-import {
-    Box,
-    Button,
-    Container,
-    Divider,
-    Grid,
-    Typography,
-} from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Sitemap from "../general/Sitemap";
-import theme from "../../styles/themes/theme";
 
 const Hero = () => {
     return (

@@ -91,12 +91,13 @@ export default function Home() {
             </Container>
             <ServicesSection />
             <TextMarquee />
-            <ImageAccordionPreviewSection
-                id="portfolio"
-                title="Portfolio"
-                images={accordionOneImages}
-                // button={{ text: "Visit Site", href: "/products" }}
-            />
+            <Box id="portfolio">
+                <ImageAccordionPreviewSection
+                    title="Portfolio"
+                    images={accordionOneImages}
+                    // button={{ text: "Visit Site", href: "/products" }}
+                />
+            </Box>
             <Box id="contact">
                 <ContactPanel />
             </Box>
