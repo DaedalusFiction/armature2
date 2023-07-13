@@ -17,10 +17,8 @@ export default function Home() {
     return (
         <Box>
             <Meta />
-
             <Header />
             <Hero />
-
             <Container maxWidth="xl">
                 <Box className="section" id="about">
                     <Grid container spacing={6}>
@@ -94,8 +92,7 @@ export default function Home() {
             <Box id="portfolio">
                 <ImageAccordionPreviewSection
                     title="Portfolio"
-                    images={accordionOneImages}
-                    // button={{ text: "Visit Site", href: "/products" }}
+                    content={accordionOneContent}
                 />
             </Box>
             <Box id="contact">
@@ -105,11 +102,12 @@ export default function Home() {
     );
 }
 
-const accordionOneImages = [
+const accordionOneContent = [
     {
         src: "/images/charleneScreencap.webp",
         alt: "charlene morris' website screencap",
         href: "https://charlenemorris.com",
+        button: { href: "https://charlenemorris.com", text: "Visit Site" },
         title: "Charlene Morris",
         text: "Charlene is a Licenses Insurance Broker who has been visiting homes and helping people navigate the field of Medicare and Medicaid options since 2006.",
     },
@@ -117,12 +115,14 @@ const accordionOneImages = [
         src: "/images/flavorScreencap.webp",
         alt: "screenshot of Flavor Exceptional Catering website",
         href: "https://flavorcville.com",
+        button: { href: "https://flavorcville.com", text: "Visit Site" },
         title: "Flavor Exceptional Catering",
         text: "Flavor Exceptional Catering is run by chefs Sandy Archer and Danny Niedermeyer. They work closely with UVA Sports and with several sororities and fraternities.",
     },
     {
         src: "/images/pfddScreencap.webp",
         alt: "screenshot of 2022 KDA PFDD",
+        button: { href: "https://kdapfdd.net", text: "Visit Site" },
         href: "https://kdapfdd.net",
         title: "2022 KDA PFDD",
         text: "The Kennedy's Disease Association put on a Patient-Focused Drug Development event in 2022 and needed a dedicated website to convey information and pertinent documentation to participants. ",
@@ -131,6 +131,7 @@ const accordionOneImages = [
         src: "/images/fictionalScreencap.webp",
         alt: "Fictional Web Screenshot",
         href: "https://fictionalweb.com",
+        button: { href: "https://fictionalweb.com", text: "Visit Site" },
         title: "Fictional Web",
         text: "Fictional Web is Dave Sorensen's web development and desgin portfolio website. His focus is on working with individuals in the arts to create stunning personal websites.",
     },
@@ -138,6 +139,7 @@ const accordionOneImages = [
         src: "/images/rumenScreencap.webp",
         alt: "screenshot of The Rumen website",
         href: "https://therumen.com",
+        button: { href: "https://therumen.com", text: "Visit Site" },
         title: "The rumen",
         text: "The Rumen is a literary journal run by Dave Sorensen and poet James Cole. It utilizes Google Cloud as a database and has a custom-built submissions portal to allow contributors to submit directly in their browser.",
     },

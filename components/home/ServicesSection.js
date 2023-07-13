@@ -39,7 +39,10 @@ const services = [
 
 const ServicesSection = () => {
     return (
-        <Box sx={{ background: theme.palette.primary.main }}>
+        <Box
+            className="section"
+            sx={{ background: theme.palette.primary.main }}
+        >
             <Container maxWidth="xl" disableGutters>
                 {services.map((service, index) => {
                     return (

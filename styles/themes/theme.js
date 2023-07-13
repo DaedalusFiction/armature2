@@ -4,25 +4,11 @@ let theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            // main: "#DD4B1D", //Big Orange
-            // main: "#ef369d", //magenta 2
-            // // main: "#ef3688", //magenta 1
-            // main: "#f9822e", //creamsicle
-            // main: "#36ef61", //spring green
-            // main: "#CE37F0", //phlox (yes that's real)
-            // main: "#49BB71", //jade
-            // main: "#FF472B", //reddish
-            // main: "#673147", //plum
-            // overlay: "rgba(103, 49, 71, 0.5)", //plum?
-            // main: "#8A1F4A", //murrey
             main: "#FF472B", //coquelicot (orange)
             overlay: "rgba(255, 71, 43, 0)", //coquelicot
-
-            // overlay: "rgba(206, 55, 240, 0.5)",
-            // overlay: "rgba(138, 31, 74, 0.5)",
         },
         secondary: {
-            main: "#0098d8", //burnt orange
+            main: "#F6F7EB", //ivory
         },
         background: {
             // default: "#fef9f7", //lightbeige

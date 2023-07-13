@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import theme from "../../styles/themes/theme";
 
-const ImageAccordionPreviewSection = ({ title, images, button }) => {
+const ImageAccordionPreviewSection = ({ title, content }) => {
     const [selected, setSelected] = useState(1);
     return (
         <Box
@@ -45,38 +45,43 @@ const ImageAccordionPreviewSection = ({ title, images, button }) => {
                                         color: theme.palette.custom.light,
                                     }}
                                 >
-                                    {images[selected].title}
+                                    {content[selected].title}
                                 </Typography>
                                 <Typography
                                     sx={{
                                         color: theme.palette.custom.lightMuted,
                                     }}
                                 >
-                                    {images[selected].text}
+                                    {content[selected].text}
                                 </Typography>
-                                {/* <Box>
-                                    <Link href={button.href}>
+                                <Box>
+                                    <Link
+                                        href={content[selected].button.href}
+                                        passHref
+                                    >
                                         <Button
-                                            variant="contained"
+                                            variant="outlined"
                                             color="secondary"
-                                            sx={{ marginTop: "1rem" }}
+                                            sx={{
+                                                marginTop: "1rem",
+                                            }}
                                         >
-                                            {button.text}
+                                            {content[selected].button.text}
                                         </Button>
                                     </Link>
-                                </Box> */}
+                                </Box>
                             </Box>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={8} order={{ xs: 0, md: 1 }}>
                         <Box className="flex" sx={{ gap: "1rem" }}>
-                            {images.map((image, index) => {
+                            {content.map((item, index) => {
                                 return (
                                     <Box
                                         key={index}
                                         sx={{
                                             backgroundImage: {
-                                                xs: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${image.src})`,
+                                                xs: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${item.src})`,
                                             },
                                             flexGrow:
                                                 selected === index ? "3" : "1",
@@ -89,10 +94,10 @@ const ImageAccordionPreviewSection = ({ title, images, button }) => {
                                             transition: "300ms",
                                             filter:
                                                 selected === index
-                                                    ? "brightness(100%)"
-                                                    : "brightness(50%)",
+                                                    ? "brightness(100%) grayscale(100%)"
+                                                    : "brightness(50%) grayscale(100%)",
                                             "&:hover": {
-                                                filter: "brightness(100%)",
+                                                filter: "brightness(100%) grayscale(100%)",
                                             },
                                         }}
                                         onClick={() => {
